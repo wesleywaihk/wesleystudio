@@ -1,5 +1,0 @@
-
-RewriteEngine on
-
-RewriteCond %{HTTP_HOST} ^viiv\.wesley\.idv\.hk$
-RewriteRule ^/?(.*)$ "http\:\/\/wesley\.com\.hk\/viiv\/$1" [R=301,L]

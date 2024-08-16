@@ -1,9 +1,0 @@
-<type>officeDir</type>
-<swfPath>
-	<eng>images/eng/bldg/</eng>
-	<tc>images/tc/bldg/</tc>
-	<sc>images/sc/bldg/</sc>
-</swfPath>
-<imgPath>images/logo/</imgPath>
-<xmlPath>xml/</xmlPath>
-<locPath>./</locPath>

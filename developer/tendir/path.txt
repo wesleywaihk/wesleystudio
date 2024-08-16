@@ -1,1 +1,0 @@
-<type>portal</type><swfPath>images/</swfPath><imgPath>images/logo/</imgPath><xmlPath>xml/</xmlPath><locPath>./</locPath>
