@@ -1,0 +1,7 @@
+@media only screen and (min-width:320px){
+.bmpui-ui-watermark {
+             display:none !important;
+            /*background-image: url(images/CSL_logo.jpg)  !important;*/
+        }
+}
+

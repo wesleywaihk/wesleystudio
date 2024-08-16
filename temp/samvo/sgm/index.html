@@ -1,0 +1,52 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+	<title>samvo group</title>
+	<meta name="viewport" content=" maximum-scale=1, width=640">
+	<!--<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>-->
+	<meta name="description" content="Samvo">
+    <meta name="keywords" content="Samvo, Hoola, Samvo Group">
+	<script src="js/jquery-2.0.3.min.js"></script>
+	<script src="js/googleAnalytics.js"></script>	
+	<script>
+		var userLang = navigator.language || navigator.userLanguage;
+		userLang = userLang.toLowerCase();
+		if(userLang.substr(0,2)=='zh'){
+			if(userLang.substr(3,2)=='tw'||userLang.substr(3,2)=='hk'){						
+				tempLang='tc';
+			}else{						
+				tempLang='sc';
+			}
+		}else{					
+			tempLang='en';
+		}
+		if(window.location.hash!=''){
+			hashVar=window.location.hash;
+		}else{
+			hashVar='#home';
+		}
+		if(! /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || screen.width>=760 ) {
+			if(window.location.hash!=''){
+				hashVar=window.location.hash;
+			}else{
+				hashVar='#home';
+			}
+			if(/Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+				url='http://www.samvogroup.com/'+tempLang+'/main.html'+hashVar;
+			}else{
+				url='http://www.samvogroup.com/'+tempLang+'/'+hashVar;
+			}
+		}else{
+			path=location.pathname;
+			if(path.substr(path.length-10,path.length)=='index.html'){
+				path=path.substr(0,path.length-11)+'/';
+			}		
+			url=location.protocol+'//'+location.hostname+path+tempLang+'/'+hashVar;
+		}
+		window.open(url,'_top');
+	</script>
+</head>
+<body>
+</body>
+</html>

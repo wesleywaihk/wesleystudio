@@ -1,0 +1,94 @@
+@charset "utf-8";
+/* CSS Document */
+#contactus{
+	background-image:url(../images/contactus/bg.jpg); 
+	background-position: left top; /* override by js */
+	background-repeat:no-repeat;
+	width:100%;
+	position:relative;
+	top:0px;
+	overflow:hidden;
+}
+#contactus #innerScroller{
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+#contactus #innerScroller .content{
+	width:640px;
+	top:0px;
+	z-index:10;
+	display:block;
+	float:left;
+	position:relative;	
+}
+#contactus #content1 h2{
+	display:block;
+	position:relative;
+	width:574px;
+	padding:0px;
+	margin:110px auto 0px auto; /* margin-top override by js */
+	font-size:35pt; /* override by js */
+}
+#contactus #content1 p{
+	display:block;
+	width:574px;
+	margin:3px auto 0px auto;
+	font-size:16.5pt;
+	line-height:160%; /* override by js */
+}
+#contactus #content1 p#p2{
+	margin-top:365px; /* override by js */	
+}
+#contactus #content1 ul#p1menu{
+	display:block;
+	position:absolute;
+	left:33px; 
+	top:356px; /* override by js */
+	width:574px;
+	height:190px;
+	margin:0px;
+	padding:0px;
+}
+#contactus #content1 ul#p1menu li{
+	display:block;
+	list-style:none;
+	list-style-type:none;
+	
+	padding:0px;
+	width:574px;
+	
+	margin:0px 0px 30px 0px;
+	background:rgba(0,0,0,0.7) url(../images/arrowR.png) no-repeat 95% 50%;
+	
+	border-radius:100px;
+	-webbit-border-radius:100px;	
+	-moz-border-radius:100px;
+	-o-border-radius:100px;	
+}
+#contactus #content1 ul#p1menu li:first-child{
+	background:rgba(43,2,12,0.7) url(../images/telIcon.png) no-repeat 94% 50%;
+}
+#contactus #content1 ul#p1menu li a{	
+	display:block;	
+	color:#FFF;
+	cursor:pointer;
+	font-size:26pt;
+	//line-height:90px;	
+	
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	-moz-user-select: -moz-none;
+	-o-user-select: none;
+	user-select: none;	
+	padding:28px 55px 17px 45px;//0px 55px 0px 45px;
+}
+#contactus .textScroll2{
+	width:586px;	
+}
+#contactus .txtField{
+	width:560px;
+}
+#contactus .submitButton, #contactus .resetButton{
+	width:260px;
+}

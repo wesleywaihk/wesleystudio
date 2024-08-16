@@ -1,0 +1,193 @@
+@charset "utf-8";
+/* CSS Document */
+#home{
+	background-image:url(../images/home/bg.jpg);
+	background-position: left top; /*override by javascript*/
+	background-repeat:no-repeat;
+	width:100%;
+	position:relative;
+	top:0px;
+	overflow:hidden;
+}
+#home #innerScroller{
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+#home #innerScroller .content{
+	width:640px;
+	top:0px;
+	z-index:10;
+	display:block;
+	float:left;
+	position:relative
+}
+
+#home #content1 h1{
+	display:block;
+	position:relative;
+	width:390px;
+	height:192px;
+	padding:0px;
+	margin:32px auto 0px auto; /*maegin-top over ride by javascript*/
+	background:url(../images/home/logo.png) no-repeat center top;
+}
+#home #content1 h1 span{
+	display:none;
+}
+#home #content1 ul#p1menu{
+	display:block;
+	position:absolute;
+	left:97px; /*override by javascript*/
+	top:230px; /*override by javascript*/
+	width:450px;
+	margin:0px;
+	padding:0px;	
+}
+#home #content1 ul#p1menu li{
+	display:block;
+	list-style:none;
+	list-style-type:none;
+	
+	padding:0px;	
+	text-align:center;
+	background:rgba(0,0,0,0.7);
+	padding:20px 10px 12px 10px;		
+	border-radius:100px;
+	-webbit-border-radius:100px;	
+	-moz-border-radius:100px;
+	-o-border-radius:100px;
+	width:430px; /*override by javascript*/	
+	margin:0px 0px 11px 0px;
+	cursor:pointer;
+	font-size:20pt; /*override by javascript*/	
+	line-height:110%; /*override by javascript*/
+	
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	-moz-user-select: -moz-none;
+	-o-user-select: none;
+	user-select: none;
+}
+#home #content1 ul#p1menu li:last-child{
+	background:rgba(54,4,4,0.7);
+}
+#home #content1 footer{
+	display:block;
+	width:590px;
+	padding:5px 25px 13px 25px;
+	position:absolute;
+	left:0px;
+	bottom:0px;
+}
+#home #content1 footer nav{
+	margin-bottom:10px; /*override by javascript*/
+	position:relative;
+	height:40px;
+}
+#home #content1 footer nav ul{
+	display:block;
+	width:440px;
+	height:40px; /*override by javascript*/
+	float:left;
+	margin:0px;
+	padding:0px;
+	position:relative;
+}
+#home #content1 footer nav ul li{
+	display:block;
+	list-style:none;
+	list-style-type:none;
+	float:left;
+	height:40px; /*override by javascript*/
+	cursor:pointer;
+	background:url(../images/home/icons.png) no-repeat;
+}
+#home #content1 footer #icon1{
+	width:36px;
+	background-position:0px 0px; /*background-position-y override by javascript*/
+}
+#home #content1 footer #icon2{
+	width:40px;
+	background-position:-36px 0px; /*background-position-y override by javascript*/
+}
+#home #content1 footer #icon3{
+	width:43px;
+	background-position:-76px 0px; /*background-position-y override by javascript*/
+}
+#home #content1 footer #icon4{
+	width:146px;
+	background-position:-119px 0px; /*background-position-y override by javascript*/
+}
+#home #content1 footer #icon5{
+	width:67px;
+	background-position:-265px 0px; /*background-position-y override by javascript*/
+	cursor:default;
+}
+#home #content1 footer #icon6{
+	width:77px;
+	background-position:-332px 0px; /*background-position-y override by javascript*/
+	cursor:default;
+}
+#home #content1 footer nav ul li span{
+	display:none;
+}
+#home #content1 footer #moreInfo{
+	float:right;
+	padding:0px 23px;
+	background:#210e01;
+	border-radius:100px;
+	-webbit-border-radius:100px;	
+	-moz-border-radius:100px;
+	-o-border-radius:100px;
+	line-height:40px; /*override by javascript*/
+	cursor:pointer;
+	font-size:14pt; /*override by javascript*/
+	
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	-moz-user-select: -moz-none;
+	-o-user-select: none;
+	user-select: none;	
+}
+#home #content1 footer p{
+	font-size:8pt;
+	margin:0px;
+	padding:0px;
+	line-height:140%;
+}
+#home footer #cp{
+	cursor:pointer;
+}
+#home  #content2 .textScroll2 > ul{
+	display:block;
+	padding:0px;
+	position:relative;
+}
+#home  #content2 .textScroll2 > ul li{
+	border:#000 1px solid;
+	border-radius:5px;
+	-webbit-border-radius:5px;	
+	-moz-border-radius:5px;
+	-o-border-radius:5px;	
+	display:block;
+	
+	margin:0px 0px 10px 0px;
+	background:url(../images/arrowR2.png) no-repeat right 15px center;	
+	cursor:pointer;
+	width: 565px;
+	font-size:20pt;
+	line-height:110%;
+	padding:15px;
+	color:#000;
+	padding:25px 15px 15px 10px;	
+}
+#home .subPage h5, #home .subPage h6{
+	font-size:20pt;
+	padding:0px;
+	margin:0px 0px 10px 0px;
+}
+#home .subPage td{
+	text-align:left;
+	vertical-align:top; 
+}

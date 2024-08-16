@@ -1,0 +1,123 @@
+@charset "utf-8";
+/* CSS Document */
+#stylelookBook{
+  position:relative;
+}
+#stylelookBook h3{
+  background-position:0px -84px;  
+}
+#stylelookBook #backBTN, #stylelookBook #nextBTN{
+  width:17px;
+  height:52px;
+  position:absolute;
+  top:320px;	
+  cursor:pointer;
+  background-image: url(../images/nextBackBTN.gif);
+  background-repeat:no-repeat
+}
+#stylelookBook #backBTN{
+  left:4px;
+  background-position:left top;
+}
+#stylelookBook #backBTN:hover{
+  left:4px;
+  background-position:left bottom;
+}
+#stylelookBook #nextBTN{
+  right:4px;
+  background-position:right top;  
+}
+#stylelookBook #nextBTN:hover{
+  right:4px;
+  background-position:right bottom; 
+}
+#stylelookBook #ebookArea{
+  width:780px;
+  height:505px;
+  overflow:hidden;
+  position:relative;  
+}
+#stylelookBook #ebookArea #booksScroll{
+  position:absolute;
+  left:0px;
+  top:0px;
+  height:505px;
+  background:#333;
+}
+#booksScroll .spread{
+  width:780px;
+  height:505px;
+  float:left;
+  position:relative;  
+}
+#booksScroll .pageSingle, #booksScroll .pageDouble{
+  height:505px;
+  background:#f7f7f7 url(../images/loading.gif) 50% 50% no-repeat;
+  position:absolute;  
+}
+#booksScroll .pageSingle{
+  width:390px;
+  left:195px;  
+}
+#booksScroll .pageDouble{
+  width:780px;
+}
+#booksScroll .spread .zoomLayer{
+  width:inherit;
+  height:inherit;
+  position:absolute;
+  z-index:10;
+}
+#booksScroll .spread .zoomLayer .hitArea{
+  position:absolute;
+  cursor:pointer;
+  z-index:11;
+  background:url(images/spacer.gif) \0;  	
+}
+#booksScroll .spread .zoomLayer .hitArea .hightlight{
+  position:absolute;
+}
+#booksScroll .spread .zoomLayer .hitArea .hightlight div{
+  background:#80192E;
+  width:inherit;
+  height:inherit;
+  display:none;
+  position:absolute;
+}
+#booksScroll #p13 #ha2 .hightlight div{
+  background:#fff;
+}
+#booksScroll .spread .zoomLayer .hitArea .hightlight .animateBG{
+  z-index:12;
+}
+#booksScroll .spread .zoomLayer .hitArea .hightlight .hoverBG{
+  z-index:11;
+}
+#booksScroll .spread .zoomLayer .hitArea:hover .hightlight .hoverBG{
+  display:block;
+}
+#booksScroll .spread .zoomLayer .popUp{
+  position:absolute;
+  z-index:12;
+  box-shadow:2px 2px 8px rgba(0,0,0,.5);
+  border:#fff 2px solid;	
+  display:none;
+  cursor:pointer;
+  background:#fff;
+}
+#stylelookBook #pageNav{
+  height:22px;
+  margin:auto;
+  margin-top:26px;
+}
+#stylelookBook #pageNav .pageBTN{
+  width:11px;
+  height:11px;
+  background:#999;
+  margin-right:11px;
+  float:left;
+  cursor:pointer;
+}
+#stylelookBook #pageNav .pageBTN:hover, #stylelookBook #pageNav .active, #stylelookBook #pageNav .active:hover{
+  background:#80192E
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=1024; user-scalable=1; maximum-scale=2"/>
+<title>samvo betbroker</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<script type="text/javascript" src="./js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="./js/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="./js/checkBrowser.js"></script>
+<script type="text/javascript" src="./js/historyDetails.js"></script>
+<script type="text/javascript" src="./js/dropDown.js"></script>
+<script type="text/javascript" src="./js/lightBox.js"></script>
+<script type="text/javascript" src="./js/terms.js"></script>
+<script type="text/javascript">
+	var termsAccepted=true; //terms accepted or not
+	var setQuestion =true; //set forget password question or not
+	var sortedBy = 'bookie';
+	/*betDetail=[bet id,
+							 place bet date time,
+							 placer, 
+							 [match informations],
+							 [market informations],
+							 price,
+							 stake,
+							 result,
+							 p/l,
+							 reconciled p/l,
+							 [[bookie,bookie accounts,bookie bet id,[bet date time text, bet date time code (MMDDhhmm)],[Confirm date time text, Confirm date time code (MMDDhhmm)],customer's odds type,account's odds type,customer's stake,account's stake,Bet Status(confirmed/pending/failed),customer's P/L,account's Reconciled P/L,customer's P/L,account's Reconciled P/L]]*/
+	var betDetail = ['00123',
+									 'Jul 21<br/>19:00',
+									 'Chan Siu Ming',
+									 ['Jul 21 16:00 (live)','English Premier League','Chelsea FC(2) vs Manchester Utd(1)'],
+									 ['FullTime','OU(2.25)','Over'],
+									 '1.5 (decimal)',
+									 'CNY 999', 
+									 '1:1',
+									 'CNY 999',
+									 'CNY 999',
+									 [['IBS7','ibs1','aa14234',['jan 23<br/>19:00:00',0123190000],['jan 22<br/>19:00:00',0122190000],'1.5<br/>(decimal)','1.8<br/>(hk)','CNY 999','HKD 999','confirmed','CNY 999','HKD 999','confirmed','CNY 999','HKD 999'],
+										['IBS4','ibs3','aa1553',['jul 21<br/>19:00:00',0721190000],['jan 23<br/>19:00:00',0123190000],'1.5<br/>(decimal)','1.8<br/>(hk)','CNY 999','HKD 999','confirmed','CNY 999','HKD 999','pending','CNY 999','HKD 999'],
+										['IBS9','ibs2','aa134534',['jan 22<br/>19:00:00',0122190000],['aug 24<br/>19:00:00',0824190000],'1.5<br/>(decimal)','1.8<br/>(hk)','CNY 999','HKD 999','confirmed','CNY 999','HKD 999','failed','CNY 999','HKD 999'],
+										['IBS0','ibs4','aa17837',['dec 26<br/>19:00:00',1226190000],['sep 25<br/>19:00:00',0925190000],'1.5<br/>(decimal)','1.8<br/>(hk)','CNY 999','HKD 999','confirmed','CNY 999','HKD 999','confirmed','CNY 999','HKD 999'],
+										['IBS1','ibs9','aa16786',['sep 25<br/>19:00:00',0925190000],['dec 26<br/>19:00:00',1226190000],'1.5<br/>(decimal)','1.8<br/>(hk)','CNY 999','HKD 999','confirmed','CNY 999','HKD 999','confirmed','CNY 999','HKD 999']]]
+</script>
+<link href="./css/main.css" rel="stylesheet" type="text/css" />
+<link href="./css/history.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div class='header'>
+		<h1><span>samvo&reg; betbroker</span></h1>
+		<ul id="navMenu">
+			<li id="events" onclick="window.open('events.html','_self')">events</li>
+			<li id="betHistory" onclick="window.open('history.html','_self')" class='active'>bet history</li>
+			<li id="bettingAccounts" onclick="window.open('bettingAccounts.html','_self')">betting accounts</li>
+			<li id="preferences" onclick="window.open('preference.html','_self')">preferences</li>
+			<li id="operationManagement" onclick="window.open('#','_self')">operation management</li>
+			<li id="logout" onclick="window.open('#','_self')">logout</li>
+		</ul>		
+		<div class="infoBOX">	
+			<table>
+				<tr><td>welcome <span id='userName'>username0001</span></td></tr>
+				<tr><td id="time">sep 16, 04:51 GMT+00</td></tr>
+			</table>
+			<button name="betMinitorBTN" id="betMinitorBTN" type="button">bet<br/>monitor</button>
+		</div>
+	</div>
+	<div id='contentArea'>
+		<div id='contentArea2'>
+			<h3>bet history</h3>
+			<input name="backBTN" id='backBTN' value="back" type="button" onclick="history.back()" />	
+			<table id="betDetailTable" width="0" border="0" cellspacing="0" cellpadding="0">
+				<tr class="th1">
+					<th class='col1'>bet id</th>
+					<th class='col2'>place bet<br/>date time</th>
+					<th class='col3'>placer</th>
+					<th class='col4 leftTXT'>match information</th>
+					<th class='col5 leftTXT'>market information</th>
+					<th class='col6'>price</th>
+					<th class='col7'>stake</th>
+					<th class='col8'>result</th>
+					<th class='col9'>p/l</th>
+					<th class='col10'>reconciled p/l</th>
+				</tr>				
+			</table>
+			<div id='searchArea2'>
+				<span class='txtSpan'>bookie</span>
+				<div id='bookieSelect' class='dropDown'>
+					<span>all</span>
+					<div class='dropMenu'>
+						<ul>
+							<li id='all'>all</li>
+							<li id='all'>IBS</li>
+							<li id='live'>IBS</li>
+							<li id='live'>IBS</li>
+						</ul>
+					</div>			
+				</div> 
+				<span class='txtSpan'>&nbsp;&nbsp;bet status</span>
+				<div id='betStatusSelect' class='dropDown'>
+					<span>all</span>
+					<div class='dropMenu'>
+						<ul>
+							<li id='all'>all</li>
+							<li id='live'>pending</li>
+							<li id='live'>accepted</li>
+							<li id='live'>failed</li>
+						</ul>
+					</div>			
+				</div> 
+			</div>
+			<table id='bookieTable' width="0" border="0" cellspacing="0" cellpadding="0"></table>		
+			<input name="backBTN" id='backBTN' value="back" type="button" onclick="history.back()" />	
+		</div>
+		<div id='footerTerms'>			
+			<p class='footerTxt'><a href="javascript:void(0)" id='termsPop'>terms and conditions</a><br/>
+			samvobetbroker.com is licensed by the alderney gambling control commission. &copy; 2013 samvo international limited. all rights reserved.<br/> 
+			samvo international limited is incorporated in alderney, company no. 1503. registered office address millenium house, ollivier street, gy9 3td.</p>
+		</div>
+	</div>
+</body>
+</html>

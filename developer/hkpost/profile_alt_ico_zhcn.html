@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class='font-size-m'>
+<!--
+  lang="en / zh-HK / zh-CN"
+  class='font-size-s / font-size-m / font-size-l'
+-->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+<title>帐户资料 | hongkong post E-Services</title>
+<link rel="apple-touch-icon" sizes="57x57" href="./img/icons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="./img/icons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="./img/icons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="./img/icons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="./img/icons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="./img/icons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="./img/icons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="./img/icons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./img/icons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="./img/icons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./img/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="./img/icons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./img/icons/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="./styles/app.min.css" />
+<script defer type="text/javascript" src="./js/app.min.js"></script>
+</head>
+
+<body class="theme-1 logged-in"><!-- class=" theme-1 / theme-2 / theme-3 " -->
+  <div class="wrapper">
+    <header>
+  <div class="shadow-sm">
+    <nav class="container navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="https://accountsdev.hongkongpost.hk/epage">
+        <img src="./img/header/hkp_logo.png" class="d-inline-block align-top" alt="Hongkong Post" height="60">
+        <img src="./img/header/hkp_logo_l.jpg" class="d-none d-sm-inline-block align-top align-top" alt="Hongkong Post" height="60">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div id="navbarNav" class="collapse navbar-collapse order-1">
+        
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0 features">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">我的香港邮政帐户</a>
+			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="./profile"><i class="fas fa-user"></i> 检视帐户</a>
+              <a class="dropdown-item" href="./linkup"><i class="fas fa-tasks"></i> 网上平台用户管理</a>
+              <a class="dropdown-item" href="./inbox"><i class="fas fa-envelope"></i> 查阅信息</a>
+            </div>
+          </li>
+          <!--
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              About HKP
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown"></div>
+          </li>
+          <li class="nav-item"><a class="nav-link"></a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link disabled" href="#">Disabled</a></li>
+          -->
+        </ul>
+        
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0 settings">
+          <li class="nav-item"><a class="nav-link" href="./profile_alt_ico_en.html" lang="en">English</a></li>
+          <li class="nav-item"><a class="nav-link" href="./profile_alt_ico_zhhk.html" lang="zh-hk">繁</a></li>
+          <li class="nav-item active"><a class="nav-link" href="./profile_alt_ico_zhcn.html" lang="zh-CN">简</a></li>
+          
+            <li class="nav-item log-out"><a class="nav-link" href="./saml/logout">登出</a></li>
+          
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+    <main class="container-fluid profile">
+      <section class="account-info alpha-bg">
+        <div class="container">
+          <div>
+            <h2><i class="fas fa-user"></i> 帐户资料</h2>
+            <form id="updateForm" class="display-mode" action="./profile" method="post" autocomplete="off">
+              <div class="row">
+                <label for="staticId" class="col-sm-3 col-form-label">帐户名称</label>
+                <div class="col-sm-9">
+                  <label class="col-form-label">PETER_CHAN</label>
+                </div>
+              </div>
+              <div class="row">
+                <label for="staticEmail" class="col-sm-3 col-form-label">电邮</label>
+                <div class="col-sm-9">
+                  <label class="col-form-label">peterchan@mail.com</label>
+                </div>
+              </div>
+              <div class="row">
+                <label for="inputLastname" class="col-sm-3 col-form-label">姓氏</label>
+                <div class="col-sm-9">
+                  <input type="text" readonly="readonly" class="form-control-plaintext inputsm" id="inputLastname" name="inputLastname" value="Chan">
+                </div>
+              </div>
+              <div class="row">
+                <label for="inputFirstname" class="col-sm-3 col-form-label">名字</label>
+                <div class="col-sm-9">
+                  <input type="text" readonly="readonly" class="form-control-plaintext inputsm" id="inputFirstname" name="inputFirstname" value="Peter">
+                </div>
+              </div>
+              <div class="row">
+                <label for="staticCustType" class="col-sm-3 col-form-label font-weight-bold">客户类别</label>
+                <div class="col-sm-9">
+                  <label class="col-form-label">个人</label>
+                </div>
+              </div>
+              <div id="rowBtn1" class="rowBtn row">
+                <div class="col-lg-3">
+                  <a class=" btn-block btn btn-primary" href="./profile/changePassword" role="button">更改密码</a>
+                </div>
+                <div class="col-lg-3">
+                  <a id="btnChangeProfile" class="btn-block btn btn-primary" href="#" role="button">更新个人数据</a>
+                </div>
+              </div>
+              <div id="rowBtn2" class="rowBtn row">
+                <div class="col-lg-3">
+                  <button id="btnChangeProfile" class="btn btn-block btn-primary" type="submit">更新个人数据</button>
+                </div>
+                <div class="col-lg-3">
+                  <a id="btnChangeProfileBack" class="btn btn-block" href="./profile" role="button">返回</a>
+                </div>
+              </div>
+              <input type="hidden" name="_csrf" value="3cd15919-4357-4ced-b8cf-495d050bcfe5">
+            </form>
+          </div>
+        </div>
+      </section>
+      <section class="tools solid-bg">
+        <div class="container">
+          <h2><i class="fas fa-tasks"></i> 网上平台用户管理</h2>
+          <div class="unit-block">
+      			<div class="row unit-head">
+      				<div class="col-md-3"></div>
+      				<div class="col-md-6">使用者</div>
+      				<div class="col-md-3">状态</div>
+      			</div>
+            <div class="row m-auto">
+              <div class="col-12 col-md-3 mt-auto mb-auto">「投寄易」</div>
+              <div class="col-12 col-md-6 mt-auto mb-auto" data-col-label="使用者">ECSHIP_PETERCHAN</div>
+              <div class="col-12 col-md-3 mt-auto mb-auto" data-col-label="状态">已连结</div>
+            </div>
+            <div class="row m-auto">
+              <div class="col-12 col-md-3 mt-auto mb-auto">「我的特快专递」</div>
+              <div class="col-12 col-md-6 mt-auto mb-auto" data-col-label="使用者">MYSPT_CHRIS</div>
+              <div class="col-12 col-md-3 mt-auto mb-auto" data-col-label="状态">已连结</div>
+            </div>
+            <div class="row m-auto">
+              <div class="col-12 col-md-3 mt-auto mb-auto">「邮购网」</div>
+              <div class="col-12 col-md-9 mt-auto mb-auto">
+                <a class="btn btn-block btn-color-1 col-6" href="./linkup/newlinkup?appCode=STP">连结此服务</a>
+      				</div>
+            </div>
+            <div class="row m-auto">
+              <div class="col-12 col-md-3 mt-auto mb-auto">香港邮政通函邮寄服务</div>
+              <div class="col-12 col-md-6 mt-auto mb-auto" data-col-label="使用者">HKPCS_CHRIS1</div>
+              <div class="col-12 col-md-3 mt-auto mb-auto" data-col-label="状态">已连结</div>
+            </div>
+      		</div>
+        </div>
+      </section>
+    </main>
+    <button class="btnB2top page-top" title="Go to top">
+	<i class="material-icons md-18 align-middle">keyboard_arrow_up</i>
+</button>
+<footer>
+  <div class="container">
+    
+    <div class="row shortcut">
+			<div class="col-md-3 logo">
+				<a class="navbar-brand" href="https://www.hongkongpost.hk/" target="_blank">
+          <img src="./img/footer/hkp_logo_bw.png" class="d-inline-block align-top" alt="Hongkong Post" height="80">
+				</a>
+			</div>
+			<div class="col features">
+        <h5>我的香港邮政帐户</h5>
+        <a href="./profile">检视帐户</a><br>
+        <a href="./linkup">网上平台用户管理</a><br>
+        <a href="./inbox">查阅信息</a>
+      </div>
+    </div>
+    
+    <div class="row copyright">
+      <span>© 2019 香港邮政
+        <a href="https://accountsdev.hongkongpost.hk/tc/imp_notices/index.html" target="_blank">重要告示</a>
+        <a href="https://accountsdev.hongkongpost.hk/tc/privacy/index.html" target="_blank">私隐政策</a>
+        <a href="https://accountsdev.hongkongpost.hk/tc/related_links/index.html" target="_blank">有关连结</a>
+        <a href="https://accountsdev.hongkongpost.hk/tc/faq_support/index.html" target="_blank">常见问题</a>
+        <a href="https://accountsdev.hongkongpost.hk/tc/contact_us/index.html" target="_blank">联络我们</a>
+      </span>
+      <a href="https://www.w3.org/TR/WCAG20/" target="_blank">
+        <img src="./img/footer/wcag2aa.gif" alt="符合万维网联盟有关无障碍网页设计指引中2A级别的要求 (此连结将会以新视窗开启)">
+      </a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+</body>
+</html>

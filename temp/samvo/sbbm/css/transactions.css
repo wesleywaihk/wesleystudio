@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* CSS Document */
+#transactions{
+	background-image:url(../images/transactions/bg.jpg); 
+	background-position: left top; /* override by js */
+	background-repeat:no-repeat;
+	width:100%;
+	position:relative;
+	top:0px;
+	overflow:hidden;
+}
+#transactions h2{
+	display:block;
+	position:relative;
+	width:574px;
+	padding:0px;
+	margin:107px auto 0px auto; /* margin-top override by js */
+	font-size:35pt; /* override by js */
+}
+#transactions p{
+	display:block;
+	width:574px;
+	margin:3px auto 30px auto; /*margin-bottom override by js */
+	font-size:16.5pt; /* override by js */
+	line-height:120%; /* override by js */
+}
+#transactions a{
+	cursor:pointer;
+	color:#a69a4f;
+	text-decoration:underline;
+}

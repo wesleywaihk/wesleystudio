@@ -1,0 +1,113 @@
+<?php
+	$from_name = 'SBB Mail Sender';
+	$from = 'sbb-server@samvogroup.com';
+	$to = 'wesley.wai@samvogroup.com';//'sbbmarketing@samvogroup.com';
+	$bcc = 'wesley.wai@samvogroup.com';//'riskalerts@samvogroup.com';	
+	
+	//*** Uniqid Session ***//  
+	$strSid = md5(uniqid(time()));
+	$strHeader = "From:".$from_name."<".$from.">\r\n";
+	$strHeader .= "To:".$to."\r\n";
+	$strHeader .= "Return-Path:".$from_name."<".$from.">\r\n";
+	$strHeader .= "MIME-Version: 1.0\r\n";
+	$strHeader .= "Bcc:".$bcc."\r\n";
+	$strHeader .= "Content-Type: multipart/mixed; boundary=\"".$strSid."\"\n\n";  
+	$strHeader .= "This is a multi-part message in MIME format.\n";  
+	$strHeader .= "--".$strSid."\n";  
+	$strHeader .= "Content-type: text/html; charset=utf-8\n";  
+	$strHeader .= "Content-Transfer-Encoding: 7bit\r\n";	
+	
+	$strSubject = 'sbb registration application';
+	$strSubject = "=?UTF-8?B?" . base64_encode($strSubject) . "?=";
+	
+	$strMessage = "<html>";
+	$$strMessage .= "<head><title>Brokerage Application</title></head>";
+	$strMessage .= "<body>";
+	$strMessage .= "<style>body,table,tr,td{font-size:9pt; font-family:arial;</style>";
+	$strMessage .= "<b>Brokerage Application</b>";
+	$strMessage .= "<br>";
+	$strMessage .= "<br>";
+	$strMessage .= "<table cellspacing='1' cellpadding='5' border='0' bgcolor='#000000' width='95%'>";
+	$strMessage .= "	<tr>";
+	$strMessage .= "		<td bgcolor='#ffffff'>Title</td>";
+	$strMessage .= "		<td bgcolor='#ffffff'>".$_POST['title']."</td>";
+	$strMessage .= "	</tr>";
+	$strMessage .= "	<tr>";
+	$strMessage .= "		<td bgcolor='#ffffff'>Firstname</td>";
+	$strMessage .= "		<td bgcolor='#ffffff'>".$_POST['firstName']."</td>";
+	$strMessage .= "	</tr>";
+	$strMessage .= "	<tr>";
+	$strMessage .= "		<td bgcolor='#ffffff'>Lastname</td>";
+	$strMessage .= "		<td bgcolor='#ffffff'>".$_POST['lastName']."</td>";
+	$strMessage .= "	</tr>";
+	$strMessage .= "	<tr>";
+	$strMessage .= "		<td bgcolor='#ffffff'>Email</td>";
+	$strMessage .= "		<td bgcolor='#ffffff'>".$_POST['email']."</td>";
+	$strMessage .= "	</tr>";
+	$strMessage .= "	<tr>";
+	$strMessage .= "		<td bgcolor='#ffffff'>Tel Type</td>";
+	$strMessage .= "		<td bgcolor='#ffffff'>".$_POST['telType']."</td>";
+	$strMessage .= "	</tr>";
+	$strMessage .= "	<tr>";
+	$strMessage .= "		<td bgcolor='#ffffff'>Contact number</td>";
+	$strMessage .= "		<td bgcolor='#ffffff'>".$_POST['contactNumber']."</td>";
+	$strMessage .= "	</tr>";
+	$strMessage .= "	<tr>";
+	$strMessage .= "		<td bgcolor='#ffffff'>Address</td>";
+	$strMessage .= "		<td bgcolor='#ffffff'>".nl2br(stripcslashes($values['address']))."</td>";
+	$strMessage .= "	</tr>";
+	$strMessage .= "	<tr>";
+	$strMessage .= "		<td bgcolor='#ffffff'>Town</td>";
+	$strMessage .= "		<td bgcolor='#ffffff'>".$_POST['town']."</td>";
+	$strMessage .= "	</tr>";
+	$strMessage .= "	<tr>";
+	$strMessage .= "		<td bgcolor='#ffffff'>Country</td>";
+	$strMessage .= "		<td bgcolor='#ffffff'>".$_POST['country']."</td>";
+	$strMessage .= "	</tr>";
+	$strMessage .= "	<tr>";
+	$strMessage .= "		<td bgcolor='#ffffff'>Postcode</td>";
+	$strMessage .= "		<td bgcolor='#ffffff'>".$_POST['postCode']."</td>";
+	$strMessage .= "	</tr>";
+	$strMessage .= "	<tr>";
+	$strMessage .= "		<td bgcolor='#ffffff'>DOB</td>";
+	$strMessage .= "		<td bgcolor='#ffffff'>".$_POST['dob']."</td>";
+	$strMessage .= "	</tr>";
+	$strMessage .= "	<tr>";
+	$strMessage .= "		<td bgcolor='#ffffff'>Currency</td>";
+	$strMessage .= "		<td bgcolor='#ffffff'>".$_POST['currency']."</td>";
+	$strMessage .= "	</tr>";
+	$strMessage .= "	<tr>";
+	$strMessage .= "		<td bgcolor='#ffffff'>Receive Samvobetbroker's special offers</td>";
+	$strMessage .= "		<td bgcolor='#ffffff'>".$_POST['receive']."</td>";
+	$strMessage .= "	</tr>";
+	$strMessage .= "	<tr>";
+	$strMessage .= "		<td bgcolor='#ffffff'>How did you hear about us?</td>";
+	$strMessage .= "		<td bgcolor='#ffffff'>".$_POST['howDidYouHearAboutUs']."</td>";
+	$strMessage .= "	</tr>";
+	$strMessage .= "	<tr>";
+	$strMessage .= "		<td bgcolor='#ffffff'>Security question</td>";
+	$strMessage .= "		<td bgcolor='#ffffff'>".$_POST['securityQuestion']."</td>";
+	$strMessage .= "	</tr>";
+	$strMessage .= "	<tr>";
+	$strMessage .= "		<td bgcolor='#ffffff'>Answer</td>";
+	$strMessage .= "		<td bgcolor='#ffffff'>".$_POST['answer']."</td>";
+	$strMessage .= "	</tr>";
+	$strMessage .= "	<tr>";
+	$strMessage .= "		<td bgcolor='#ffffff'>IP</td>";
+	$strMessage .= "		<td bgcolor='#ffffff'>".$_SERVER['REMOTE_ADDR']."</td>";
+	$strMessage .= "	</tr>";
+	$strMessage .= "</table>";
+	$strMessage .= "<br>";
+	$strMessage .= "<br>";
+	$strMessage .= date(DATE_RFC822);
+	$strMessage .= "</body>";
+	$strMessage .= "</html>";
+		
+	$ok = @mail($to, $strSubject, $strMessage, $strHeader);
+	
+	if($ok){
+		echo "is_success=1";
+	}else{
+		echo "is_success=0";
+	};
+?>

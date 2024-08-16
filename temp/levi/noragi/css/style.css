@@ -1,0 +1,109 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+  background-color: #000;
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  /*height: 2760px \9;
+  overflow: hidden \9;*/
+}
+#navInner h1, #navInner span, #container .sections h3 span{
+  display:none;
+}
+img{
+	display:block;
+}
+#container{	
+  margin:80px auto 100px auto;
+  width:830px;
+}
+#container .sections{
+  width:780px;
+  padding:25px;
+  margin-bottom:40px;
+  background:#FFF; 
+}
+#container .sections h3{
+  display:block;
+  height:42px;
+  width:100%;
+  background-image:url(../images/sectionTitle.gif);
+  background-repeat:no-repeat;
+  margin-bottom:19px;  
+}
+#video, #flashVideo{
+  position:relative;
+  width:830px;
+  height:467px;
+  background:#f7f7f7 url(../images/loading.gif) 50% 50% no-repeat;
+  margin-bottom:40px;
+}
+#noragi{
+  position:relative;
+}
+#noragi h3{
+  background-position:0px 0px;  
+}
+#noragi .txt{
+  margin:8px 0px 5px 0px;	
+  width:780px;
+  font-size:12px;
+  font-family:'Microsoft JhengHei','微軟正黑體','黑体',sans-serif; 
+  text-align:justify;     
+}
+#interpreations{
+  position:relative;
+  width:830px;
+  padding:25px 0px;
+  background:#fff;
+  margin-bottom:40px;
+}
+#interpreations h3{
+  background-position:0px -42px; 
+  display:block;
+  height:42px;
+  width:100%;
+  background-image:url(../images/sectionTitle.gif);
+  background-repeat:no-repeat;
+  margin:0px 25px 19px 25px;
+}
+#interpreations h3 span{
+  display:none;
+}
+#interpreations .txt{
+  margin:5px 25px 10px 25px;
+  padding:0px;	
+  width:780px;
+  font-size:12px;
+  font-family:'Microsoft JhengHei','微軟正黑體','黑体',sans-serif;    
+}
+#interpreations img{
+  margin:0px 0px 0px 25px;
+  padding:0px;
+}
+#interpreations #interpreations_3{
+  margin:0px 0px 0px 11px;	
+  padding:0px;	
+}
+#products{
+  position:relative;
+  width:830px;
+  padding:25px 0px;
+  background:#fff;
+}
+#products h3{
+  background-position:0px -168px; 
+  display:block;
+  height:42px;
+  width:100%;
+  background-image:url(../images/sectionTitle.gif);
+  background-repeat:no-repeat;
+  margin:0px 25px 19px 25px; 
+}
+#products h3 span{
+	display:none;
+}

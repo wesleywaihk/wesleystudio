@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" class='font-size-m'>
+<!--
+  lang="en / zh-HK / zh-CN"
+  class='font-size-s / font-size-m / font-size-l'
+-->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+<title>Hongkong Post ID Registration | hongkong post E-Services</title>
+<link rel="apple-touch-icon" sizes="57x57" href="./img/icons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="./img/icons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="./img/icons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="./img/icons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="./img/icons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="./img/icons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="./img/icons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="./img/icons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./img/icons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="./img/icons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./img/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="./img/icons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./img/icons/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="./styles/app.min.css" />
+<script defer type="text/javascript" src="./js/app.min.js"></script>
+</head>
+
+<body class="theme-1"><!-- class=" theme-1 / theme-2 / theme-3 " -->
+  <div class="wrapper">
+    <header>
+  <div class="shadow-sm">
+    <nav class="container navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="https://accountsdev.hongkongpost.hk/epage">
+        <img src="./img/header/hkp_logo.png" class="d-inline-block align-top" alt="Hongkong Post" height="60">
+        <img src="./img/header/hkp_logo_l.jpg" class="d-none d-sm-inline-block align-top align-top" alt="Hongkong Post" height="60">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div id="navbarNav" class="collapse navbar-collapse order-1">
+        
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0 settings">
+          <li class="nav-item active"><a class="nav-link" href="./register_alt_ico_en.html" lang="en">English</a></li>
+          <li class="nav-item"><a class="nav-link" href="./register_alt_ico_zhhk.html" lang="zh-hk">繁</a></li>
+          <li class="nav-item"><a class="nav-link" href="./register_alt_ico_zhcn.html" lang="zh-CN">简</a></li>
+          
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+    <main class="container-fluid register">
+      <div class="container">
+        <div>
+          <h1>HKP ID Registration</h1>
+          <form id="regForm" class="needs-validation" action="./register/process" method="post" autocomplete="off">
+    				<div class="form-group form-row">
+    					<div class="col custom-control">
+    						<label for="inputLoginname">Login Name</label> <input type="text" pattern="[A-Za-z0-9][A-Za-z0-9_@.-]{3,20}" class="form-control" name="inputLoginname" aria-describedby="loginnameHelp" placeholder="Required" required="" maxlength="20"><small id="loginHelp" class="form-text text-muted">
+    							<ul class="pl-4">
+    								<li>Alphanumeric characters only.</li>
+    								<li>Length between 3 and 20.</li>
+    							</ul>
+    						</small>
+    					</div>
+    				</div>
+    				<div class="form-group form-row">
+    					<div class="col">
+    						<label for="inputEmail">Email address</label> <input type="email" class="form-control" name="inputEmail" aria-describedby="emailHelp" placeholder="Required" required="" maxlength="30"><small id="emailHelp" class="form-text text-muted">
+    							<ul class="pl-4">
+    								<li>Maximum length is 30.</li>
+    							</ul>
+    						</small>
+    					</div>
+    				</div>
+    				<div class="form-group form-row">
+    					<div class="col-sm pb-2 pb-md-0">
+    						<label for="inputPassword">Password</label> <input type="password" class="form-control" name="inputPassword" id="inputPassword" pattern="(?=^.{8,20}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="Required" required=""><small id="passwordHelp" class="form-text text-muted">
+    							<ul class="pl-4">
+    								<li>Alphanumeric characters only.</li>
+    								<li>Length between 8 and 20.</li>
+    								<li>Contains both UPPER and lower case letters and at least one symbol.</li>
+    							</ul>
+    						</small>
+    					</div>
+    					<div class="col-sm">
+    						<label for="inputPasswordConfirm">Password Confirmation</label> <input type="password" class="form-control" name="inputPasswordConfirm" id="inputPasswordConfirm" placeholder="Required" required=""><small id="passwordConfirmHelp" class="form-text text-danger d-none">Password mis-match.</small>
+    					</div>
+    				</div>
+    				<div class="form-group form-row">
+    					<div class="form-check col-sm">
+    						<label for="inputLang" class="d-block"> Default Language</label>
+    						<div class="btn-group btn-group-toggle" data-toggle="buttons">
+    							<label class="btn  btn-outline-primary "> <input class="form-check-input" type="radio" name="inputLang" id="inputLangEN" value="EN"> English
+    							</label> <label class="btn  btn-outline-primary active focus"> <input class="form-check-input" type="radio" name="inputLang" id="inputLangTC" value="TC" checked="checked"> 繁體中文
+    							</label> <label class="btn  btn-outline-primary "> <input class="form-check-input" type="radio" name="inputLang" id="inputLangSC" value="SC" lang="zh-CN"> 简体中文
+    							</label>
+    						</div>
+    					</div>
+    				</div>
+    				<hr>
+    				<div class="form-group form-row">
+    					<div class="form-check col-sm">
+    						<label for="inputFirstname">First Name</label> <input type="text" class="form-control" name="inputFirstname" maxlength="30" aria-describedby="firstnameHelp" placeholder="Required" required=""><small id="firstnameHelp" class="form-text text-muted">
+    							<ul class="pl-4">
+    								<li>Maximum length is 30.</li>
+    							</ul>
+    						</small>
+    					</div>
+    					<div class="form-check col-sm">
+    						<label for="inputLastname">Last Name</label> <input type="text" class="form-control" name="inputLastname" maxlength="30" aria-describedby="lastnameHelp" placeholder="Required" required=""><small id="lastnameHelp" class="form-text text-muted">
+    							<ul class="pl-4">
+    								<li>Maximum length is 30.</li>
+    							</ul>
+    						</small>
+    					</div>
+    				</div>
+    				<hr>
+    				<div class="form-group form-row">
+    					<div class="form-check col-sm">
+    						<label for="inputAccType1" class="d-block"> Account Type</label>
+    						<div class="btn-group btn-group-toggle" data-toggle="buttons">
+    							<label class="btn  btn-outline-primary active focus"> <input class="form-check-input" type="radio" name="inputAccType" id="inputAccTypeI" value="I" checked="checked">
+    								Personal Account
+    							</label> <label class="btn  btn-outline-primary "> <input class="form-check-input" type="radio" name="inputAccType" id="inputAccTypeC" value="C">
+    								Company/Organisation Account
+    							</label>
+
+    						</div>
+    					</div>
+    				</div>
+    				<div class="form-group form-row reg-org" style="display:none">
+    					<div class="form-check col-sm">
+    						<label for="inputOrgname">Name of Company/Organisation</label> <input type="text" class="form-control reg-org-input" name="inputOrgname" maxlength="30" aria-describedby="orgnameHelp" placeholder="Required" required="" disabled="disabled"><small id="orgnameHelp" class="form-text text-muted">
+    							<ul class="pl-4">
+    								<li>Maximum length is 30.</li>
+    							</ul>
+    						</small>
+    					</div>
+    					<div class="form-check col-sm">
+    						<label for="inputOrgPos">Position</label> <input type="text" class="form-control reg-org-input" name="inputOrgPos" maxlength="30" aria-describedby="orgposHelp" placeholder="" disabled="disabled"><small id="orgposHelp" class="form-text text-muted">
+    							<ul class="pl-4">
+    								<li>Maximum length is 30.</li>
+    							</ul>
+    						</small>
+    					</div>
+    				</div>
+
+    				<div class="form-group form-row reg-org" style="display:none">
+    					<div class="form-check col-sm">
+    						<label>Type of Organisation</label>
+                <select name="inputOrgType" class="form-control reg-org-input" disabled="disabled">
+    							<option disabled="disabled">Please select (Required)</option>
+                  <option value="C" selected="selected">Corporate</option>
+                  <option value="G">Government</option>
+                  <option value="O">Other</option>
+    						</select>
+    					</div>
+    					<div class="form-check col-sm">
+    						<label>Business Nature</label>
+                <select name="inputBiznature" class="form-control reg-org-input" disabled="disabled">
+                  <option disabled="disabled">Please select (Required)</option>
+                  <option value="0210" selected="selected">Govt/ Quasi Govt Organizations</option>
+                  <option value="0220">Ngo/ Public Utility</option>
+                  <option value="0310">Manufacturing</option>
+                  <option value="0323">Printing, Lettershop</option>
+                  <option value="0338">Miscellaneous Trading Company</option>
+                  <option value="0445">Construction/Engineering</option>
+                  <option value="0450">Retail/Wholesales</option>
+                  <option value="0454">Internet Trader</option>
+                  <option value="0461">Printing</option>
+                  <option value="0480">Transportation/ Shipping</option>
+                  <option value="0499">Telecommunications</option>
+                  <option value="0511">Publishing Industries</option>
+                  <option value="0512">Media/Entertainment</option>
+                  <option value="0513">Broadcasting And Telecommunications</option>
+                  <option value="0520">Banking/ Finance</option>
+                  <option value="0522">Financial Services (Banking &amp; Securities)</option>
+                  <option value="0524">Insurance (Insurance And Fund Management)</option>
+                  <option value="0530">Property</option>
+                  <option value="0531">Real Estate, Building &amp; Construction</option>
+                  <option value="0611">Educational Services</option>
+                  <option value="0625">Charitable Institution</option>
+                  <option value="0626">Medical Services</option>
+                  <option value="0721">Hotel and Accomodation</option>
+                  <option value="0722">Food Service, Catering and Restaurant</option>
+                  <option value="0723">Restaurant/ Catering</option>
+                  <option value="0724">Hotel/Travel</option>
+                  <option value="0814">Private Households</option>
+                  <option value="0900">Charitable Organizations, Ngo And Associations</option>
+                  <option value="0910">I/E Trading (Garment, Toys, Electronics, Watches)</option>
+                  <option value="0911">Professional Services(accounting,legal,adv. etc)</option>
+                  <option value="0921">Government Dept And Related Org And Utilities</option>
+                  <option value="0981">Beauty/ Fitness</option>
+                  <option value="0982">Trading</option>
+                  <option value="0990">Others</option>
+                  <option value="0999">Retail And Consumer</option>
+                  <option value="5000">Logistics and consolidators</option>
+                  <option value="5001">Hospitals and healthcare</option>
+                  <option value="5002">IT system &amp; Technical</option>
+                  <option value="5004">Manufacturing, industrial</option>
+                  <option value="N/A">Unclassified</option>
+    						</select>
+    					</div>
+    				</div>
+            <div class="custom-control custom-checkbox mb-3">
+              <input type="checkbox" class="custom-control-input" id="iagreeCheck" name="iagreeCheck" required="">
+              <label class="custom-control-label" for="iagreeCheck">I have read and accept the above Terms and Conditions (including the terms contained in <a href="#" class="btn-link">Privacy Policy Statement</a> and Disclaimer).</label>
+              <div class="invalid-feedback">Example invalid feedback text</div>
+            </div>
+    				<div class="form-group form-row reg-org submit-btn-group">
+    					<div class=" col-12 col-md-6 col-lg-4">
+    						<button type="submit" class="btn  btn-primary btn-block">Submit</button>
+    					</div>
+    				</div>
+            <div>
+              <input type="hidden" name="_csrf" value="79be73c2-4661-4d7e-b119-20ec22748142">
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <button class="btnB2top page-top" title="Go to top">
+	<i class="material-icons md-18 align-middle">keyboard_arrow_up</i>
+</button>
+<footer>
+  <div class="container">
+    
+    <div class="row copyright">
+      <span>© 2019 Hongkong Post
+        <a href="https://accountsdev.hongkongpost.hk/tc/imp_notices/index.html" target="_blank">Important Notices</a>
+        <a href="https://accountsdev.hongkongpost.hk/tc/privacy/index.html" target="_blank">Privacy Policy</a>
+        <a href="https://accountsdev.hongkongpost.hk/tc/related_links/index.html" target="_blank">Contact Us</a>
+        <a href="https://accountsdev.hongkongpost.hk/tc/faq_support/index.html" target="_blank">FAQ</a>
+        <a href="https://accountsdev.hongkongpost.hk/tc/contact_us/index.html" target="_blank">Contact Us</a>
+      </span>
+      <a href="https://www.w3.org/TR/WCAG20/" target="_blank">
+        <img src="./img/footer/wcag2aa.gif" alt="Level Double-A conformance, W3C WAI Web Content Accessibility Guidelines 2.0 (This link will open in a new window)">
+      </a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+</body>
+</html>

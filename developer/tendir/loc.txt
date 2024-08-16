@@ -1,0 +1,1 @@
+<bldg>bldg_07</bldg><floor>g</floor><terminal>B01-KIO05</terminal>

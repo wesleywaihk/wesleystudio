@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=1024; user-scalable=1; maximum-scale=2"/>
+<title>samvo betbroker</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<script type="text/javascript" src="./js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="./js/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="./js/checkBrowser.js"></script>
+<script type="text/javascript" src="./js/preference.js"></script>
+<script type="text/javascript" src="./js/dropDown.js"></script>
+<script type="text/javascript" src="./js/lightBox.js"></script>
+<script type="text/javascript" src="./js/terms.js"></script>
+<script type="text/javascript">
+	var termsAccepted=true; //terms accepted or not
+	var setQuestion =true; //set forget password question or not
+</script>
+<link href="./css/main.css" rel="stylesheet" type="text/css" />
+<link href="./css/preference.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div class='header'>
+		<h1><span>samvo&reg; betbroker</span></h1>
+		<ul id="navMenu">
+			<li id="events" onclick="window.open('events.html','_self')">events</li>
+			<li id="betHistory" onclick="window.open('history.html','_self')">bet history</li>
+			<li id="bettingAccounts" onclick="window.open('bettingAccounts.html','_self')">betting accounts</li>
+			<li id="preferences" onclick="window.open('preference.html','_self')" class='active'>preferences</li>
+			<li id="operationManagement" onclick="window.open('#','_self')">operation management</li>
+			<li id="logout" onclick="window.open('#','_self')">logout</li>
+		</ul>		
+		<div class="infoBOX">	
+			<table>
+				<tr><td>welcome <span id='userName'>username0001</span></td></tr>
+				<tr><td id="time">sep 16, 04:51 GMT+00</td></tr>
+			</table>
+			<button name="betMinitorBTN" id="betMinitorBTN" type="button">bet<br/>monitor</button>
+		</div>
+	</div>
+	<div id='contentArea'>
+		<div id='contentArea2'>
+			<h3>preferences</h3>
+			<table width="0" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td class='colA'>username:</td>
+					<td class='colB'><span class='readOnly'>username0001</span></td>
+					<td class='colC'>&nbsp;</td>
+				</tr>
+				<tr>
+					<td class='colA'>currency:</td>
+					<td class='colB'>
+						<div id='currencyDM' class='dropDown'>
+							<span>CNY</span>
+							<div class='dropMenu'>
+								<ul>
+									<li id='CNY'>CNY</li>
+									<li id='HKD'>HKD</li>
+									<li id='USD'>USD</li>
+									<li id='EUR'>EUR</li>
+								</ul>
+							</div>
+						</div>
+					</td>
+					<td class='colC'><span id='currencyError'>&nbsp;</span></td>
+				</tr>
+				<tr>
+					<td class='colA'>Change Password:</td>
+					<td class='colB'><input type="password" name="currentPW" id="currentPW" /> <span class='extraTXT'>current password</span></td>
+					<td class='colC'><span id='currentPWError' style="display:block">password not match</span></td>
+				</tr>
+				<tr>
+					<td class='colA'>&nbsp;</td>
+					<td class='colB'><input type="password" name="newPW" id="newPW" /> <span class='extraTXT'>new password</span></td>
+					<td class='colC'><span id='newPWError'>&nbsp;</span></td>
+				</tr>
+				<tr>
+					<td class='colA'>&nbsp;</td>
+					<td class='colB'><input type="password" name="retypeNewPW" id="retypeNewPW" /> <span class='extraTXT'>re-type password</span></td>
+					<td class='colC'><span id='retypeNewPWError'>&nbsp;</span></td>
+				</tr>	
+				<tr>
+					<td class='colA'>Max order per bet:</td>
+					<td class='colB'><input type="text" name="maxOrderPerBet" id="maxOrderPerBet" /> <span class='extraTXT'>(CNY)</span></td>
+					<td class='colC'><span id='maxOrderPerBetError'>&nbsp;</span></td>
+				</tr>
+				<tr>
+					<td class='colA'><div style="float:left; padding-right:4px;">Max order </div><div class='dropDown dropDownMini'>
+							<span>per day</span>
+							<div class='dropMenu'>
+								<ul>
+									<li id='Day'>per day</li>
+								<li id='Week'>per week</li>
+								<li id='Month'>per month</li>
+								</ul>
+							</div>
+						</div><div style="float:left; padding-left:2px;">:</div></td>
+					<td class='colB'><input type="text" name="textfield2" id="maxOrderPerDay" /> <span class='extraTXT'>(CNY)</span></td>
+					<td class='colC'><span id='maxOrderPerDayError'>&nbsp;</span></td>
+				</tr>
+				<tr class='spacer'>
+					<td colspan="3" class='colA'>&nbsp;</td>
+				</tr>
+				<tr class='spacer2'>
+					<td colspan="3" class='colA'>&nbsp;</td>
+				</tr>
+				<tr>
+					<td class='colA'>security question:</td>
+					<td class='colB' colspan="2">
+						<div id='securityQuestion' class='dropDown'>
+							<span>please choose a security question.</span>
+							<div class='dropMenu'>
+								<ul>
+									<li id='q1'>your favourite sports team.</li>
+									<li id='q2'>your mother’s maiden name</li>
+									<li id='q3'>name of your first school</li>
+									<li id='q4'>your place of birth</li>
+								</ul>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class='colA'>your answer:</td>
+					<td class='colB' colspan="2"><input type="text" name="securityAnswer" id="securityAnswer" /></td>					
+				</tr>
+				<tr>
+					<td class='colA'>recovery email:</td>
+					<td class='colB' colspan="2"><input type="text" name="backupEmail" id="backupEmail" /></td>					
+				</tr>
+				<tr class='spacer'>
+					<td colspan="3" class='colA'>&nbsp;</td>
+				</tr>
+				<tr class='spacer2'>
+					<td colspan="3" class='colA'>&nbsp;</td>
+				</tr>
+				<tr class='btnCell'>
+					<td class='colA'>&nbsp;</td>
+					<td class='colB'><input name='confirmBTN' id='confirmBTN' type="button" value="confirm"/></td>
+					<td class='colC'>&nbsp;</td>
+				</tr>
+			</table>	
+			<div id='selfExcl'>
+				<div class='title'><h4>Self Exclusion</h4> <div id='infoBTN'>?</div></div>
+				<table width="0" border="0" cellspacing="0" cellpadding="0">
+
+					<tr> 
+						<td class='colA' style="padding-top:10px">exclusion period:</td>
+						<td class='colB' style="padding-top:10px">
+							<div class='dropDown' id='selfExcPeriod'>
+								<span>please select</span>
+								<div class='dropMenu'>
+									<ul>
+										<li id='6months'>6 months</li>
+										<li id='5year'>5 years</li>
+									</ul>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr class='btnCell'>
+						<td class='colA'>&nbsp;</td>
+						<td class='colB'><input name='selfExBTN' id='selfExBTN' type="button" value="disable account"/></td>	
+					</tr>
+				</table>
+			</div>
+
+		</div>
+		<div id='footerTerms'>			
+			<p class='footerTxt'><a href="javascript:void(0)" id='termsPop'>terms and conditions</a><br/>
+			samvobetbroker.com is licensed by the alderney gambling control commission. &copy; 2013 samvo international limited. all rights reserved.<br/> 
+			samvo international limited is incorporated in alderney, company no. 1503. registered office address millenium house, ollivier street, gy9 3td.</p>
+		</div>
+	</div>
+</body>
+</html>

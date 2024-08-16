@@ -1,0 +1,334 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* general */
+
+a{
+color: #0099CC
+text-decoration:underline;
+}
+a:hover{
+color: #993333;
+text-decoration:none;
+}
+
+#titleDIV{
+	position:absolute;
+	left:-58px;
+	top:-136px;
+	width:1024px;
+	height:191px;
+	z-index:1;
+}
+
+#footerDIV {
+	position:absolute;
+	left:687px;
+	top:-91px;
+	width:316px;
+	height:91px;
+	z-index:2;
+}
+
+img, div { behavior: url(Scripts/iepngfix.htc) }
+
+body,td,th {
+	font-family: "微軟正黑體", Microsoft JhengHei,  LiHei Pro, Arial Unicode MS, Arial Unicode, "新細明體", "細明體", Arial, Helvetica, sans-serif;
+	/*font-family: "新細明體", "細明體", Arial, Helvetica, sans-serif;*/
+	font-size: 12px;
+}
+
+body,form {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+/* light box */
+
+.black_overlay{
+	display: none;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 1000%;
+	background-color: black;
+	z-index:1001;
+	-moz-opacity: 0.8;
+	opacity:.80;
+	filter: alpha(opacity=80);
+
+}
+ 
+.white_content {
+	position:relative;
+	display: none;
+	padding: 0px 0px 0px 0px;
+	border:0px;	
+	z-index:1002;
+	width:1024px;	
+	/*overflow: auto;*/	
+}
+
+/* tip page */
+#Tip1titleDIV{
+	position:absolute;
+	left:-58px;
+	top:-155px;
+	width:1024px;
+	height:189px;
+	z-index:1;
+} 
+
+#Tip3titleDIV{
+	position:absolute;
+	left:-20px;
+	top:-86px;
+	width:1024px;
+	height:189px;
+	z-index:1;
+} 
+
+.tipTXT_ST1 {
+	font-size: 16px;
+	color:#244c84;
+	font-weight:bold;
+}
+
+.tipTXT_ST2 {
+	font-size: 16px;
+	color:#315b07;
+	font-weight:bold;
+}
+
+.tipTXT_ST3 {
+	font-size: 16px;
+	color:#773170;
+	font-weight:bold;
+}
+
+.tipTXT_ST4 {
+	font-size: 16px;
+	color:#8D321B;
+	font-weight:bold;
+}
+
+.tipLink_ST1{
+	font-family: "微軟正黑體", Microsoft JhengHei,  LiHei Pro, Arial Unicode MS, Arial Unicode, "新細明體", "細明體", Arial, Helvetica, sans-serif;
+	/*font-family: "新細明體", "細明體", Arial, Helvetica, sans-serif;*/
+	text-decoration:underline;
+	font-weight:bold;
+	color:#00265e;
+	font-size:16px;
+}
+.tipLink_ST1:hover{
+	text-decoration:none;
+}
+.tipLink_ST2{
+	font-family: "微軟正黑體", Microsoft JhengHei,  LiHei Pro, Arial Unicode MS, Arial Unicode, "新細明體", "細明體", Arial, Helvetica, sans-serif;
+	/*font-family: "新細明體", "細明體", Arial, Helvetica, sans-serif;*/
+	text-decoration:underline;
+	font-weight:bold;
+	color:#315b07;
+	font-size:16px;
+}
+.tipLink_ST2:hover{
+	text-decoration:none;
+}
+.tipLink_ST3{
+	font-family: "微軟正黑體", Microsoft JhengHei,  LiHei Pro, Arial Unicode MS, Arial Unicode, "新細明體", "細明體", Arial, Helvetica, sans-serif;
+	/*font-family: "新細明體", "細明體", Arial, Helvetica, sans-serif;*/
+	text-decoration:underline;
+	font-weight:bold;
+	color:#773170;
+	font-size:16px;
+}
+.tipLink_ST3:hover{
+	text-decoration:none;
+}
+.tipLink_ST4{
+	font-family: "微軟正黑體", Microsoft JhengHei,  LiHei Pro, Arial Unicode MS, Arial Unicode, "新細明體", "細明體", Arial, Helvetica, sans-serif;
+	/*font-family: "新細明體", "細明體", Arial, Helvetica, sans-serif;*/
+	text-decoration:underline;
+	font-weight:bold;
+	color:#00265e;
+	font-size:16px;
+}
+.tipLink_ST4:hover{
+	text-decoration:none;
+}
+
+/* upload page */
+
+.Qhead1{
+padding:2px 5px 12px 30px;
+}
+
+.f1txtField {
+	font-family: "微軟正黑體", Microsoft JhengHei,  LiHei Pro, Arial Unicode MS, Arial Unicode, "新細明體", "細明體", Arial, Helvetica, sans-serif;
+	/*font-family: "新細明體", "細明體", Arial, Helvetica, sans-serif;*/
+	color:#b81117;
+	font-size: 19px;
+	background-color:#fce2e0;
+	border:#9e1f1f solid 1px;
+	height:32px;
+	padding:2px 2px 2px 2px;
+	font-weight:bold;	
+}
+
+.Qhead2{
+padding:4px 5px 12px 17px;
+
+}
+
+.f2txtField {
+	/*font-family: "微軟正黑體", Microsoft JhengHei,  LiHei Pro, Arial Unicode MS, Arial Unicode, "新細明體", "細明體", Arial, Helvetica, sans-serif;*/
+	font-family: "新細明體", "細明體", Arial, Helvetica, sans-serif;
+	color:#b81117;
+	font-size: 14px;
+	background-color:#fce2e0;
+	border:#9e1f1f solid 1px;
+	padding:5px 2px 2px 2px;
+	font-weight:bold;
+	height:25px;	
+}
+
+.uploadLink{
+	font-family: "微軟正黑體", Microsoft JhengHei,  LiHei Pro, Arial Unicode MS, Arial Unicode, "新細明體", "細明體", Arial, Helvetica, sans-serif;
+	/*font-family: "新細明體", "細明體", Arial, Helvetica, sans-serif;*/
+	text-decoration:underline;
+	font-weight:bold;
+	color: #660000;
+	font-size:16px;
+}
+.uploadLink:hover{
+	text-decoration:none;
+}
+
+#upload1_2IMG {
+	position:absolute;
+	left:115px;
+	top:-156px;
+	width:475px;
+	height:173px;
+	z-index:3;
+}
+
+#upload3_2IMG {
+	position:absolute;
+	left:115px;
+	top:-156px;
+	width:475px;
+	height:173px;
+	z-index:3;
+}
+
+/*video pages */
+
+#Video1titleDIV{
+	position:absolute;
+	left:-58px;
+	top:-185px;
+	width:1024px;
+	height:189px;
+	z-index:1;
+} 
+.videoTXT_ST1 {
+	font-size: 15px;
+	color:#244c84;
+	font-weight:bold;
+}
+
+.videoTXT_ST2 {
+	font-size: 15px;
+	color:#315b07;
+	font-weight:bold;
+}
+
+.videoTXT_ST3 {
+	font-size: 15px;
+	color:#773170;
+	font-weight:bold;
+}
+
+.videoTXT_ST4 {
+	font-size: 15px;
+	color:#8D321B;
+	font-weight:bold;
+}
+
+.video1TXT{
+	font-family: "微軟正黑體", Microsoft JhengHei,  LiHei Pro, Arial Unicode MS, Arial Unicode, "新細明體", "細明體", Arial, Helvetica, sans-serif;
+	/*font-family: "新細明體", "細明體", Arial, Helvetica, sans-serif;*/
+	font-size: 14px;
+	color:#000000;
+	font-weight:bold;
+}
+
+.video1Page{
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration:none;
+	font-size: 18px;
+	color:#00409d;
+	font-weight:bold;		
+}
+.video1Page:hover{
+	text-decoration:underline;
+	color: #009999;
+}
+
+#video1_2IMG {
+	position:absolute;
+	left:57px;
+	top:-158px;
+	width:475px;
+	height:173px;
+	z-index:3;
+}
+
+.videoLink_ST1{
+	font-family: "微軟正黑體", Microsoft JhengHei,  LiHei Pro, Arial Unicode MS, Arial Unicode, "新細明體", "細明體", Arial, Helvetica, sans-serif;
+	/*font-family: "新細明體", "細明體", Arial, Helvetica, sans-serif;*/
+	text-decoration:underline;
+	font-weight:bold;
+	color:#00265e;
+	font-size:16px;
+}
+.videoLink_ST1:hover{
+	text-decoration:none;
+}
+.videoLink_ST2{
+	font-family: "微軟正黑體", Microsoft JhengHei,  LiHei Pro, Arial Unicode MS, Arial Unicode, "新細明體", "細明體", Arial, Helvetica, sans-serif;
+	/*font-family: "新細明體", "細明體", Arial, Helvetica, sans-serif;*/
+	text-decoration:underline;
+	font-weight:bold;
+	color:#315b07;
+	font-size:16px;
+}
+.videoLink_ST2:hover{
+	text-decoration:none;
+}
+.videoLink_ST3{
+	font-family: "微軟正黑體", Microsoft JhengHei,  LiHei Pro, Arial Unicode MS, Arial Unicode, "新細明體", "細明體", Arial, Helvetica, sans-serif;
+	/*font-family: "新細明體", "細明體", Arial, Helvetica, sans-serif;*/
+	text-decoration:underline;
+	font-weight:bold;
+	color:#773170;
+	font-size:16px;
+}
+.videoLink_ST3:hover{
+	text-decoration:none;
+}
+.videoLink_ST4{
+	font-family: "微軟正黑體", Microsoft JhengHei,  LiHei Pro, Arial Unicode MS, Arial Unicode, "新細明體", "細明體", Arial, Helvetica, sans-serif;
+	/*font-family: "新細明體", "細明體", Arial, Helvetica, sans-serif;*/
+	text-decoration:underline;
+	font-weight:bold;
+	color:#8D321B;
+	font-size:16px;
+}
+
+.videoLink_ST4:hover{
+	text-decoration:none;
+}

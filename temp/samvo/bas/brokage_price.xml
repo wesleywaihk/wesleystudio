@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<brokage>
+	<preset selectedTimeVar='ft' selectedOddsVar='decimal' termsAccepted=1 setQuestion=1>
+		<selectedMarkets ah=1 ou=1 1X2=1></selectedMarkets>
+		<bookies>
+			<bookie id='IBC' show=1 num=0>IBC</bookie>
+			<bookie id='SBO' show=1 num=1>SBO</bookie>
+			<bookie id='ED' show=1 num=2>ED</bookie>
+			<bookie id='Singbet' show=1 num=3>Singbet</bookie>
+			<bookie id='Crown' show=1 num=4>Crown</bookie>
+			<bookie id='CrownD' show=1 num=5>Crown D</bookie>
+			<bookie id='WLG' show=1 num=6>WLG</bookie>
+			<bookie id='Pinnacle' show=1 num=7>Pinnacle</bookie>		
+		</bookies>
+	</preset>
+	<tableData>
+		<sport id='basketball' name='basketball'>
+			<timeSegment id='early' name='early' expand=1>
+				<league id='aaa' name='aaa'>
+					<match dateTime='aug 01<br>16:00:00' score='1-0'>
+						<redCard>
+							<home>1</home>
+							<alway>1</alway>
+						</redCard>
+						<team>
+							<home cn='拜仁慕尼黑' tw='拜仁慕尼黑'>Bayern Munchen</home>
+							<alway cn='切尔西' tw='車路士'>Chelsea FC</alway>
+						</team>
+						<market market='ah'>
+							<goalLine goalLine='-2.25' homeAway='home'>
+								<bookie id='IBC'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>						
+							</goalLine>					
+						</market>
+					</match>
+				</league>
+			</timeSegment>		
+		</sport>
+		
+		
+		
+		
+		<sport id='soccer' name='soccer'>
+			<timeSegment id='today' name='today' expand=1>
+				<league id='English_Premier_League' name='English Premier League'>
+					<match dateTime='16:00:00' score='1-0'>
+						<redCard>
+							<home>1</home>
+							<alway>1</alway>
+						</redCard>
+						<team>
+							<home cn='拜仁慕尼黑' tw='拜仁慕尼黑'>Bayern Munchen</home>
+							<alway cn='切尔西' tw='車路士'>Chelsea FC</alway>
+						</team>
+						<market market='ah'>
+							<goalLine goalLine='-2.25' homeAway='home'>
+								<bookie id='IBC'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>
+								<bookie id='SBO'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>		
+								<bookie id='ED'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>
+								<bookie id='Crown'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>	
+								<bookie id='CrownD'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>	
+								<bookie id='Pinnacle'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>														
+							</goalLine>					
+						</market>
+						<market market='ou'>
+							<goalLine goalLine='-2.25' homeAway='home'>
+								<bookie id='IBC'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>
+								<bookie id='SBO'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>		
+								<bookie id='ED'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>
+								<bookie id='Crown'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>	
+								<bookie id='CrownD'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>	
+								<bookie id='Pinnacle'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>														
+							</goalLine>					
+						</market>
+					</match>
+					<match dateTime='16:00:00' score='1-0'>
+						<redCard>
+							<home>1</home>
+							<alway>1</alway>
+						</redCard>
+						<team>
+							<home cn='拜仁慕尼黑' tw='拜仁慕尼黑'>Bayern Munchen</home>
+							<alway cn='切尔西' tw='車路士'>Chelsea FC</alway>
+						</team>
+						<market market='ah'>
+							<goalLine goalLine='-2.25' homeAway='home'>
+								<bookie id='IBC'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>
+								<bookie id='SBO'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>		
+								<bookie id='ED'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>
+								<bookie id='Crown'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>	
+								<bookie id='CrownD'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>	
+								<bookie id='Pinnacle'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>														
+							</goalLine>					
+						</market>
+						<market market='ou'>
+							<goalLine goalLine='-2.25' homeAway='home'>
+								<bookie id='IBC'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>
+								<bookie id='SBO'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>		
+								<bookie id='ED'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>
+								<bookie id='Crown'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>	
+								<bookie id='CrownD'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>	
+								<bookie id='Pinnacle'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>														
+							</goalLine>					
+						</market>
+						<market market='1x2'>
+							<goalLine goalLine='' homeAway=''>
+								<bookie id='IBC'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>
+								<bookie id='SBO'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>		
+								<bookie id='ED'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>
+								<bookie id='Crown'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>	
+								<bookie id='CrownD'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>	
+								<bookie id='Pinnacle'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>														
+							</goalLine>					
+						</market>
+					</match>
+				</league>
+			</timeSegment>
+			<timeSegment id='live' name='live' expand=1>
+				<league id='English_Premier_League' name='English Premier League'>
+					<match dateTime='16:00:00' score='1-0'>
+						<redCard>
+							<home>1</home>
+							<alway>1</alway>
+						</redCard>
+						<team>
+							<home cn='拜仁慕尼黑' tw='拜仁慕尼黑'>Bayern Munchen</home>
+							<alway cn='切尔西' tw='車路士'>Chelsea FC</alway>
+						</team>
+						<market market='ah'>
+							<goalLine goalLine='-2.25' homeAway='home'>
+								<bookie id='IBC'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>
+								<bookie id='SBO'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>		
+								<bookie id='ED'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>
+								<bookie id='Crown'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>	
+								<bookie id='CrownD'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>	
+								<bookie id='Pinnacle'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>														
+							</goalLine>					
+						</market>
+						<market market='ou'>
+							<goalLine goalLine='-2.25' homeAway='home'>
+								<bookie id='IBC'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>
+								<bookie id='SBO'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>		
+								<bookie id='ED'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>
+								<bookie id='Crown'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>	
+								<bookie id='CrownD'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>	
+								<bookie id='Pinnacle'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>														
+							</goalLine>					
+						</market>
+					</match>
+					<match dateTime='16:00:00' score='1-0'>
+						<redCard>
+							<home>1</home>
+							<alway>1</alway>
+						</redCard>
+						<team>
+							<home cn='拜仁慕尼黑' tw='拜仁慕尼黑'>Bayern Munchen</home>
+							<alway cn='切尔西' tw='車路士'>Chelsea FC</alway>
+						</team>
+						<market market='ah'>
+							<goalLine goalLine='-2.25' homeAway='home'>
+								<bookie id='IBC'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>
+								<bookie id='SBO'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>		
+								<bookie id='ED'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>
+								<bookie id='Crown'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>	
+								<bookie id='CrownD'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>	
+								<bookie id='Pinnacle'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>														
+							</goalLine>					
+						</market>
+						<market market='ou'>
+							<goalLine goalLine='-2.25' homeAway='home'>
+								<bookie id='IBC'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>
+								<bookie id='SBO'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>		
+								<bookie id='ED'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>
+								<bookie id='Crown'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>	
+								<bookie id='CrownD'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>	
+								<bookie id='Pinnacle'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>														
+							</goalLine>					
+						</market>
+						<market market='1x2'>
+							<goalLine goalLine='' homeAway=''>
+								<bookie id='IBC'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>
+								<bookie id='SBO'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>		
+								<bookie id='ED'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>
+								<bookie id='Crown'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>	
+								<bookie id='CrownD'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>	
+								<bookie id='Pinnacle'>
+									<home price='11.920' upDown=''></home>
+									<alway price='11.920' upDown=''></alway>						
+								</bookie>														
+							</goalLine>					
+						</market>
+					</match>
+				</league>
+			</timeSegment>			
+		</sport>		
+	</tableData>
+</brokage>

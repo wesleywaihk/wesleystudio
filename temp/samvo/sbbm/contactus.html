@@ -1,0 +1,101 @@
+<script>
+$('#contactus').ready(function(){	
+	$('#contactus #innerScroller').width(pageW*2);
+	$('#contactus .menu, #contactus .content').width(pageW);
+	resize();
+	$('#contactus #content1 p').css('font-size','16.5pt'); // for fixing an unknow bug on android
+	setTimeout( function(){	
+		
+		$('#contactus #content1 > ul#p1menu li:last-child').click(function(){
+				openSubPage(1, true);																									
+		});																							
+		$('#contactus #content2 > h3').click(function(){
+			openSubPage(0, true);	
+		});
+		$('#contactus #content2 .submitButton').click(function(){
+			if ( $("#contactFrom").val().length==0){
+				openLB("* please fill in your name",true,"#contactFrom");
+			}else if( $("#contactEmail").val().length==0){
+				openLB("* please fill in your email",true,"#contactEmail");
+			}else if (!isValidEmailAddress($("#contactEmail").val())){
+				openLB("* please fill in valid email",true,"#contactEmail");
+			}else if ( $("#contactSubject").val().length==0){
+				openLB("* please fill in your subject",true,"#contactSubject");
+			}else if ( $("#contactMessage").val().length==0){
+				openLB("* please fill in your message",true,"#contactMessage");
+			}else{
+				var action = "contactus_mail.php";
+				var variables = {};
+				variables.Name = $("#contactFrom").val();
+				variables.Email = $("#contactEmail").val();
+				variables.Subject = $("#contactSubject").val();
+				variables.Message = $("#contactMessage").val();
+				openLB("submitting data", false);
+				$.post(
+					action,
+					variables,
+					function(data){
+						if(data=='is_success=1'){
+							mailSent(true);
+						}else{
+							mailSent(false);
+						};
+					}
+				).error(function(){					
+					mailSent(false);
+				});
+			};
+		});		
+		$('#contactus #content2 .resetButton').click(function(){
+			$('#contactus #content2 .txtField').val('');
+		});
+	}, 100);
+	function openSubPage(NUM, anim){
+		if(!freezeBTN){
+			freezeBTN=true;
+			if(anim){
+				aTime=animTime*.66;
+			}else{
+				aTime=0;
+			}
+			if(NUM==0){
+				upDownPosition(0,aTime);
+				$('#contactus #innerScroller').stop().animate({'left':0},aTime,function(){
+					freezeBTN=false;
+				});	
+			}else{
+				upDownPosition(0-1*pageW,aTime);	
+				$('#contactus #innerScroller').stop().animate({'left':0-pageW},aTime,function(){
+					freezeBTN=false;
+				});
+			};
+		};
+	};	
+});
+</script>
+<div id='contactus'>
+	<div id='innerScroller'>
+		<div id='content1' class='content menu'>
+			<h2>contact us</h2>
+			<p>while we have tried to answer all your queries in the faqs section, you may still have some questions for us.
+if you'd like to know more about samvo betbroker please give us a call or submit the inquiry form:</p>
+			<ul id='p1menu'>
+				<li><a href="tel:+44 (0) 20 3075 6555">+44 (0) 20 3075 6555</a></li>
+				<li><a>inquiry form</a></li>
+			</ul>
+			<p id='p2'>any questions or suggestions are always welcome. we look forward to hearing from you.</p>
+		</div>
+		<div id='content2' class='content'>
+			<h3>inquiry form</h3>
+			<div class="textScroll">
+				<div class="textScroll2">
+					<input class='txtField' id="contactFrom"  placeholder="from"/>
+					<input class='txtField' id="contactEmail" placeholder="email"/>
+					<input class='txtField' id="contactSubject" placeholder="subject"/>
+					<textarea class='txtField' rows="4" id="contactMessage" placeholder="message"></textarea>
+					<div class="submitButton">submit</div><div class="resetButton">reset</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

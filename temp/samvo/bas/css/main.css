@@ -1,0 +1,249 @@
+@charset "utf-8";
+/* CSS Document */
+html, body {
+	padding:0px;
+	margin:0px;
+	background:#d9d8d2;
+	height: 100%;	
+}
+*{
+	font-family:Arial, Helvetica, sans-serif;
+	-webkit-text-size-adjust:none; 
+}
+form{
+	padding:0px;
+	margin:0px;
+}
+input:focus {
+ outline-width: 0;
+}
+a.smallLinks{
+	color:#999;
+	font-size:11px;
+}
+a.smallLinks:hover{
+	color:#bbb;
+	text-decoration:none;	
+}
+h3{
+	font-size:12px;	
+	line-height:18px;
+	font-weight:bold;
+	padding:0px 0px 0px 3px;	
+}
+/* header area */
+.header{
+	background:#000;
+	width:100%;
+	min-width:997px;/* ver 2.0 added */
+	height:64px;
+	box-shadow: 0px 0px 10px #999;
+	z-index:0;
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+.header h1{
+	display:block;
+	float:left;
+	margin:0px;
+	padding:0px;
+	width:173px;
+	height:64px;
+	background:url(../images/header/logo.gif) no-repeat;
+}
+.header h1 span{
+	display:none;
+}
+.header img{
+	float:left;
+}
+.header #navMenu{
+	display:block;
+	margin:39px 0px 0px 0px;
+	padding:0px;
+	display:block;
+	float:left;
+	list-style:none;
+	list-style-type:none;
+	height:25px;
+	width:auto;	
+}
+.header #navMenu li{
+	display:block;
+	font-size:11px;
+	line-height:25px;
+	padding:0px 8px;
+	margin:0px 1px 0px 0px;
+	background:url(../images/header/navBG.gif) repeat-x;
+	background-position:left top;
+	color:#999;
+	float:left;
+	width:auto;
+	cursor:pointer;
+	
+	-webkit-box-shadow: inset 1px 1px 1px rgba(255,255,255,.5),inset -1px -1px 1px rgba(0,0,0,.5);
+	-moz-box-shadow: inset 1px 1px 1px rgba(255,255,255,.5),inset -1px -1px 1px rgba(0,0,0,.5);
+	-ms-box-shadow: inset 1px 1px 1px rgba(255,255,255,.5),inset -1px -1px 1px rgba(0,0,0,.5);
+	-o-box-shadow: inset 1px 1px 1px rgba(255,255,255,.5),inset -1px -1px 1px rgba(0,0,0,.5);
+	box-shadow: inset 1px 1px 1px rgba(255,255,255,.5),inset -1px -1px 1px rgba(0,0,0,.5);
+		
+	-webkit-user-select: none; /* Chrome/Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+	-o-user-select: none;
+	user-select: none;
+}
+.header #navMenu li:hover{
+	background-position:left -25px;
+	color:#fff;
+}
+.header #navMenu li.active{
+	background-position:left -50px;
+	color:#ccc;
+	
+	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+	-ms-box-shadow:none;
+	-o-box-shadow:none;
+	box-shadow:none;
+}
+.header #navMenu li.active:hover{
+	background-position:left -75px;
+	color:#fff;
+}
+
+
+/*.header infoBOX{*/
+
+.header .infoBOX{
+	margin-right:5px;
+	border:0px;
+	border-spacing:3;
+	float:right;
+	margin:14px 10px 0px 0px;
+}
+.header .infoBOXClient{
+	margin:4px 10px 0px 0px;
+}
+.header .infoBOXClient .balance{
+	color:#aaa
+}
+.header .infoBOX #betMinitorBTN{
+	float:left;
+	font-size:11px;
+	
+	
+	padding:3px 8px 4px 8px;
+	margin:2px 4px 0px 3px;		
+	
+	cursor:pointer;
+	font-size:11px;
+	line-height:12px;
+	
+	border:#777 1px solid;
+	background:#555;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	color:#aaa
+}
+.header .infoBOX #betMinitorBTN:hover{
+	background:#999;
+	color:#fff
+}
+.header .infoBOX table{
+	float:left
+}
+/*.header infoBOX td{*/
+.header .infoBOX td{
+	text-align:right;
+	vertical-align:middle;
+	font-size:11px;
+	white-space:nowrap;
+	color:#777;	
+}
+/* end of header area */
+/* footer */
+.footerTxt{
+	font-size:10px;
+	padding:0px;
+	margin:0px;
+}
+.footerTxt a{
+	color:#a69a4f;
+	text-decoration:none;	
+}
+.footerTxt a:hover{
+	text-decoration:underline;
+}
+/* end of footer */
+/* common UI */
+/* common UI > buttons */
+.BTN{
+	border:0px;
+	margin:0px;
+	padding:0px;
+	background:#a69a4f;
+	color:#fff;
+	padding:5px 15px;
+	font-size:15px;
+	height:28px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	cursor:pointer;
+	display:block;
+}
+.BTN:hover{
+	background:#746b37;
+}
+/* end of common UI > buttons */
+/* common UI > divider */
+.divider{
+	width:2px;
+	height:28px;
+	margin:0px 7px;
+	background:url(../images/contents/divider.gif) repeat;
+	float:left	
+}
+/* end of common UI > divider */
+/* common UI > toggle button */
+.toggleBTN{
+	height:26px;
+	line-height:26px;
+	border:#666 1px solid;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px;
+	padding:0px 20px;
+	width:auto;
+	float:left;
+	cursor:pointer;
+	background:url(../images/contents/toggleBTN_BG.gif) repeat-x;
+	background-position:bottom;
+	margin:0px 1px 0px 0px;
+	color:#000;
+	font-size:12px;
+	text-shadow: 1px 1px #ddd;
+}
+.toggleBTN:hover{
+	background-position:50%;
+	color:#FFF;
+	text-shadow: 1px 1px #666;
+}
+.toggleBTN_selected{
+	background-position:top;
+	color:#FFF;
+	text-shadow: 1px 1px #666;
+}
+/* end of common UI > toggle button */
+/* common UI > checkbox */
+.checkBox{
+	cursor:pointer;
+}
+.checkBox:disabled{
+	cursor:default;
+}
+/* end of common UI > checkbox */
+/* end of common UI */

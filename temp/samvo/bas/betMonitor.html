@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=1024; user-scalable=1; maximum-scale=2"/>
+<title>samvo betbroker</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<script type="text/javascript" src="./js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="./js/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="./js/checkBrowser.js"></script>
+<script type="text/javascript" src="./js/betMonitor.js"></script>
+<script type="text/javascript" src="./js/dropDown.js"></script>
+<script type="text/javascript" src="./js/lightBox.js"></script>
+<link href="./css/main.css" rel="stylesheet" type="text/css" />
+<link href="./css/betMonitor.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div class='header'>
+		<h1><span>samvo&reg; betbroker</span></h1>	
+		<table class="infoBOX">
+			<tr><td>welcome <span id='userName'>username0001</span></td></tr>
+			<tr><td id="time">sep 16, 04:51 GMT+00</td></tr>
+		</table>
+	</div>
+	<h3>bet monitor</h3>	
+	<div id='contentArea'>
+		<div id='searchArea'>
+			<span class='txtSpan'><strong>bookie name:</strong></span>
+			<div class='dropDown'>
+				<span>all</span>
+				<div class='dropMenu'>
+					<ul>
+						<li id='all'>all</li>
+						<li id='crown'>crown</li>
+						<li id='sbo'>sbo</li>
+						<li id='ibc'>ibc</li>
+						<li id='pinnacle'>pinnacle</li>
+						<li id='isn'>isn</li>
+					</ul>
+				</div>
+			</div>
+			<span class='txtSpan'><strong>&nbsp;&nbsp;&nbsp;&nbsp;bet id:</strong></span>
+			<input name="" type="number" id='betIDTXT' />
+			<input name="" type="button" id='searchBTN' />
+			<div class='divider' id='searchDivider'></div>
+			<input name="" type="button" id='showAllBTN' value="Show All" />
+			<button name="" type="button" id='refreshBTN'>refresh<i></i></button>
+		</div>
+		<table id='betMonitorTable'>
+			<tr>
+				<th class='col1'>bet id</th>
+				<th class='col2'>bet itemNo</th>
+				<th class='col3'>bookie bet id</th>
+				<th class='col4'>bookie account</th>
+				<th class='col5'>match info</th>
+				<th class='col6'>market info</th>
+				<th class='col7'>broker info</th>
+				<th class='col8'>account info</th>
+				<th class='col9'>request dateTime<br/>used time(ms)</th>
+				<th class='col10'>bet status</th>
+			</tr>											
+			<tr>
+				<td class='col1'>1014<br />derek</td>
+				<td class='col2'>3</td>
+				<td class='col3'>1375774258716</td>
+				<td class='col4'>hjg01ts007<br/>()</td>
+				<td class='col5'>2013-08-11 02:00:00.0 Belgian Jupiler League<br/>
+					Mons(0) VS Charleroi(0) (<span class="text-success">early</span>)</td>
+				<td class='col6'>Fulltime<br/><span class="text-success">AH</span>(-0.75)<br/>away</td>
+				<td class='col7'>CNY <span class="text-error">23.874</span><br/>@ <span class="text-success">1.74</span>(DECIMAL)</td>
+				<td class='col8'>HKD <span class="text-error">30</span><br/>@ <span class="text-success">0.74</span>(HK)</td>
+				<td class='col9'>2013-08-06<br/>15:30:58.0 (300)</td>
+				<td class='col10'><button class='betStatusBTN'type="button"><i></i>Unknown</button></td>
+			</tr>
+			<tr>
+				<td class='col1'>1014<br />derek</td>
+				<td class='col2'>3</td>
+				<td class='col3'>1375789476341</td>
+				<td class='col4'>HC8NNTS001<br/>(PINNACLE)</td>
+				<td class='col5'>2013-08-08 06:30:00.0 Brazil Serie A<br/>
+Criciuma(0) VS Cruzeiro MG(0) (<span class="text-success">early</span>)</td>
+				<td class='col6'>Fulltime<br/><span class="text-success">AH</span>(-0.5)<br/>away</td>
+				<td class='col7'>CNY <span class="text-error">110</span><br/>@ <span class="text-success">2.09</span>(DECIMAL)</td>
+				<td class='col8'>HKD <span class="text-error">110</span><br/>@ <span class="text-success">1.09</span>(HK)</td>
+				<td class='col9'>2013-08-06<br/>19:44:35.0 (300)</td>
+				<td class='col10'><button class='betStatusBTN'type="button"><i></i>Pending</button></td>
+			</tr>
+			<tr>
+				<td class='col1'>1014<br />derek</td>
+				<td class='col2'>3</td>
+				<td class='col3'>1375774258716</td>
+				<td class='col4'>hjg01ts007<br/>()</td>
+				<td class='col5'>2013-08-11 02:00:00.0 Belgian Jupiler League<br/>
+					Mons(0) VS Charleroi(0) (<span class="text-success">early</span>)</td>
+				<td class='col6'>Fulltime<br/><span class="text-success">AH</span>(-0.75)<br/>away</td>
+				<td class='col7'>CNY <span class="text-error">23.874</span><br/>@ <span class="text-success">1.74</span>(DECIMAL)</td>
+				<td class='col8'>HKD <span class="text-error">30</span><br/>@ <span class="text-success">0.74</span>(HK)</td>
+				<td class='col9'>2013-08-06<br/>15:30:58.0 (300)</td>
+				<td class='col10'><button class='betStatusBTN'type="button"><i></i>Unknown</button></td>
+			</tr>
+			<tr>
+				<td class='col1'>1014<br />derek</td>
+				<td class='col2'>3</td>
+				<td class='col3'>1375789476341</td>
+				<td class='col4'>HC8NNTS001<br/>(PINNACLE)</td>
+				<td class='col5'>2013-08-08 06:30:00.0 Brazil Serie A<br/>
+Criciuma(0) VS Cruzeiro MG(0) (<span class="text-success">early</span>)</td>
+				<td class='col6'>Fulltime<br/><span class="text-success">AH</span>(-0.5)<br/>away</td>
+				<td class='col7'>CNY <span class="text-error">110</span><br/>@ <span class="text-success">2.09</span>(DECIMAL)</td>
+				<td class='col8'>HKD <span class="text-error">110</span><br/>@ <span class="text-success">1.09</span>(HK)</td>
+				<td class='col9'>2013-08-06<br/>19:44:35.0 (300)</td>
+				<td class='col10'><button class='betStatusBTN'type="button"><i></i>Pending</button></td>
+			</tr>
+			<tr>
+				<td class='col1'>1014<br />derek</td>
+				<td class='col2'>3</td>
+				<td class='col3'>1375774258716</td>
+				<td class='col4'>hjg01ts007<br/>()</td>
+				<td class='col5'>2013-08-11 02:00:00.0 Belgian Jupiler League<br/>
+					Mons(0) VS Charleroi(0) (<span class="text-success">early</span>)</td>
+				<td class='col6'>Fulltime<br/><span class="text-success">AH</span>(-0.75)<br/>away</td>
+				<td class='col7'>CNY <span class="text-error">23.874</span><br/>@ <span class="text-success">1.74</span>(DECIMAL)</td>
+				<td class='col8'>HKD <span class="text-error">30</span><br/>@ <span class="text-success">0.74</span>(HK)</td>
+				<td class='col9'>2013-08-06<br/>15:30:58.0 (300)</td>
+				<td class='col10'><button class='betStatusBTN'type="button"><i></i>Unknown</button></td>
+			</tr>
+			<tr>
+				<td class='col1'>1014<br />derek</td>
+				<td class='col2'>3</td>
+				<td class='col3'>1375789476341</td>
+				<td class='col4'>HC8NNTS001<br/>(PINNACLE)</td>
+				<td class='col5'>2013-08-08 06:30:00.0 Brazil Serie A<br/>
+Criciuma(0) VS Cruzeiro MG(0) (<span class="text-success">early</span>)</td>
+				<td class='col6'>Fulltime<br/><span class="text-success">AH</span>(-0.5)<br/>away</td>
+				<td class='col7'>CNY <span class="text-error">110</span><br/>@ <span class="text-success">2.09</span>(DECIMAL)</td>
+				<td class='col8'>HKD <span class="text-error">110</span><br/>@ <span class="text-success">1.09</span>(HK)</td>
+				<td class='col9'>2013-08-06<br/>19:44:35.0 (300)</td>
+				<td class='col10'><button class='betStatusBTN'type="button"><i></i>Pending</button></td>
+			</tr>
+			<tr>
+				<td class='col1'>1014<br />derek</td>
+				<td class='col2'>3</td>
+				<td class='col3'>1375774258716</td>
+				<td class='col4'>hjg01ts007<br/>()</td>
+				<td class='col5'>2013-08-11 02:00:00.0 Belgian Jupiler League<br/>
+					Mons(0) VS Charleroi(0) (<span class="text-success">early</span>)</td>
+				<td class='col6'>Fulltime<br/><span class="text-success">AH</span>(-0.75)<br/>away</td>
+				<td class='col7'>CNY <span class="text-error">23.874</span><br/>@ <span class="text-success">1.74</span>(DECIMAL)</td>
+				<td class='col8'>HKD <span class="text-error">30</span><br/>@ <span class="text-success">0.74</span>(HK)</td>
+				<td class='col9'>2013-08-06<br/>15:30:58.0 (300)</td>
+				<td class='col10'><button class='betStatusBTN'type="button"><i></i>Unknown</button></td>
+			</tr>
+			<tr>
+				<td class='col1'>1014<br />derek</td>
+				<td class='col2'>3</td>
+				<td class='col3'>1375789476341</td>
+				<td class='col4'>HC8NNTS001<br/>(PINNACLE)</td>
+				<td class='col5'>2013-08-08 06:30:00.0 Brazil Serie A<br/>
+Criciuma(0) VS Cruzeiro MG(0) (<span class="text-success">early</span>)</td>
+				<td class='col6'>Fulltime<br/><span class="text-success">AH</span>(-0.5)<br/>away</td>
+				<td class='col7'>CNY <span class="text-error">110</span><br/>@ <span class="text-success">2.09</span>(DECIMAL)</td>
+				<td class='col8'>HKD <span class="text-error">110</span><br/>@ <span class="text-success">1.09</span>(HK)</td>
+				<td class='col9'>2013-08-06<br/>19:44:35.0 (300)</td>
+				<td class='col10'><button class='betStatusBTN'type="button"><i></i>Pending</button></td>
+			</tr>
+			<tr>
+				<td class='col1'>1014<br />derek</td>
+				<td class='col2'>3</td>
+				<td class='col3'>1375774258716</td>
+				<td class='col4'>hjg01ts007<br/>()</td>
+				<td class='col5'>2013-08-11 02:00:00.0 Belgian Jupiler League<br/>
+					Mons(0) VS Charleroi(0) (<span class="text-success">early</span>)</td>
+				<td class='col6'>Fulltime<br/><span class="text-success">AH</span>(-0.75)<br/>away</td>
+				<td class='col7'>CNY <span class="text-error">23.874</span><br/>@ <span class="text-success">1.74</span>(DECIMAL)</td>
+				<td class='col8'>HKD <span class="text-error">30</span><br/>@ <span class="text-success">0.74</span>(HK)</td>
+				<td class='col9'>2013-08-06<br/>15:30:58.0 (300)</td>
+				<td class='col10'><button class='betStatusBTN' type="button"><i></i>Unknown</button></td>
+			</tr>
+			<tr>
+				<td class='col1'>1014<br />derek</td>
+				<td class='col2'>3</td>
+				<td class='col3'>1375789476341</td>
+				<td class='col4'>HC8NNTS001<br/>(PINNACLE)</td>
+				<td class='col5'>2013-08-08 06:30:00.0 Brazil Serie A<br/>
+Criciuma(0) VS Cruzeiro MG(0) (<span class="text-success">early</span>)</td>
+				<td class='col6'>Fulltime<br/><span class="text-success">AH</span>(-0.5)<br/>away</td>
+				<td class='col7'>CNY <span class="text-error">110</span><br/>@ <span class="text-success">2.09</span>(DECIMAL)</td>
+				<td class='col8'>HKD <span class="text-error">110</span><br/>@ <span class="text-success">1.09</span>(HK)</td>
+				<td class='col9'>2013-08-06<br/>19:44:35.0 (300)</td>
+				<td class='col10'><button class='betStatusBTN'type="button"><i></i>Pending</button></td>
+			</tr>
+		</table>
+		<div class='pagesBox'>		
+			<a id="goPage">go</a>
+			<a id="page15">15</a>
+			<span>of</span>
+			<input name="pageTXT" id="pageTXT" type="text" />
+			<a id="page5">5</a>
+			<a id="page4">4</a>
+			<a id="page3">3</a>
+			<a id="page2">2</a>
+			<span id="currentPage">1</span>		
+		</div>
+	</div>	
+</body>
+</html>

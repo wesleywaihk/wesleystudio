@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=1024; user-scalable=1; maximum-scale=2"/>
+<title>samvo betbroker</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<script type="text/javascript" src="./js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="./js/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="./js/checkBrowser.js"></script>
+<script type="text/javascript" src="./js/brokage_contents.js"></script>
+<script type="text/javascript" src="./js/dropDown.js"></script>
+<script type="text/javascript" src="./js/lightBox.js"></script>
+<script type="text/javascript" src="./js/terms.js"></script>
+<script type="text/javascript">
+	var menuShow = false; //left menu hide or show
+	var selectedTimeVar= 'ft' //ft for full time, fh for first half
+	var selectedMarkets=[true,true,true]; // AH OU 1x2 selected or not
+	var selectedOddsVar='decimal'; // decimal or hk
+	var termsAccepted=false; //terms accepted or not
+	var setQuestion =false; //set forget password question or not
+	/*sportsType = [['sports code name','sports text', hide/show,[
+									['period code name','period text',hide/show,[
+										['match code name','match text']
+									 ]
+									]]*/
+	var sportsType = [['soccer','soccer',true,[
+											['live','live',true,[
+												['Capital_One_Cup','Capital One Cup'],
+												['Champions_League','Champions League'],
+												['Championship','Championship'],
+												['Conference','Conference'],
+												['Euro_2016','Euro 2016'],
+												['FA_Community_Shield','FA Community Shield'],
+												['FA_Cup','FA Cup'],
+												['English_Premier_League','English Premier League'],
+												['Germany_Bundesliga_1','Germany Bundesliga 1'],
+												['Italy_Serie_A','Italy Serie A'],
+												['Spainish_Primera_Division','Spainish Primera Division'],
+												['Scottish_FA_Cup','Scottish FA Cup'],
+												['UEFA_Super_Cup','UEFA Super Cup'],
+												['Women_European','Women European'],
+												['Championship_Group_A','Championship &ndash; Group A'],
+												['Championship_Group_B','Championship &ndash; Group B']
+											]],
+											['today','today',true,[
+													['Capital_One_Cup','Capital One Cup'],
+													['Champions_League','Champions League'],
+													['Championship','Championship'],
+													['Conference','Conference'],
+													['Euro_2016','Euro 2016'],
+													['FA_Community_Shield','FA Community Shield'],
+													['FA_Cup','FA Cup'],
+													['English_Premier_League','English Premier League'],
+													['Germany_Bundesliga_1','Germany Bundesliga 1'],
+													['Italy_Serie_A','Italy Serie A'],
+													['Spainish_Primera_Division','Spainish Primera Division'],
+													['Scottish_FA_Cup','Scottish FA Cup'],
+													['UEFA_Super_Cup','UEFA Super Cup'],
+													['Women_European','Women European'],
+													['Championship_Group_A','Championship &ndash; Group A']
+												]],
+											['early','early',false,[
+													['Capital_One_Cup','Capital One Cup'],
+													['Champions_League','Champions League'],
+													['Championship','Championship'],
+													['Conference','Conference'],
+													['Euro_2016','Euro 2016'],
+													['FA_Community_Shield','FA Community Shield'],
+													['FA_Cup','FA Cup'],
+													['English_Premier_League','English Premier League'],
+													['Germany_Bundesliga_1','Germany Bundesliga 1'],
+													['Italy_Serie_A','Italy Serie A']
+												]]
+										]],
+										['basketball','basketball',false,[
+											['live','live',true,[
+												['Capital_One_Cup','Capital One Cup'],
+												['Champions_League','Champions League'],
+												['Championship','Championship'],
+												['Conference','Conference'],
+												['Euro_2016','Euro 2016'],
+												['FA_Community_Shield','FA Community Shield'],
+												['FA_Cup','FA Cup'],
+												['English_Premier_League','English Premier League'],
+												['Germany_Bundesliga_1','Germany Bundesliga 1'],
+												['Italy_Serie_A','Italy Serie A'],
+												['Spainish_Primera_Division','Spainish Primera Division'],
+												['Scottish_FA_Cup','Scottish FA Cup'],
+												['UEFA_Super_Cup','UEFA Super Cup'],
+												['Women_European','Women European'],
+												['Championship_Group_A','Championship &ndash; Group A'],
+												['Women_European','Women European'],
+												['Championship_Group_B','Championship &ndash; Group B']
+											]],
+											['today','today',true,[
+												['Capital_One_Cup','Capital One Cup'],
+												['Champions_League','Champions League'],
+												['Championship','Championship'],
+												['Conference','Conference'],
+												['Euro_2016','Euro 2016'],
+												['FA_Community_Shield','FA Community Shield'],
+												['FA_Cup','FA Cup'],
+												['English_Premier_League','English Premier League'],
+												['Germany_Bundesliga_1','Germany Bundesliga 1'],
+												['Italy_Serie_A','Italy Serie A']
+											]],
+											['early','early',false,[
+												['Capital_One_Cup','Capital One Cup'],
+												['Champions_League','Champions League'],
+												['Championship','Championship'],
+												['Conference','Conference'],
+												['Euro_2016','Euro 2016'],
+												['FA_Community_Shield','FA Community Shield'],
+												['FA_Cup','FA Cup']
+											]]
+										]]
+										];
+	/*tableData = [['sports code name','sports text',[
+									['period code name','period text','hide/show'[
+										['matchs code name','matchs text',[
+											['date','home','score','away','match code number']
+									 	]
+									]
+								]]*/
+	var tableData = [['soccer','soccer',[
+										['live', 'live',true,[
+											['English_Premier_League','English Premier League',[
+												['2h 37','Chelsea FC','1-0','Manchester Utd','0'],
+												['2h 37','Manchester City','2-1','Arsenal FC','1']											
+											]],
+											['Germany_Bundesliga_1','Germany Bundesliga 1',[
+												['2h 37','Burnley','1-0','Bolton Wanderers','0'],
+												['2h 37','Doncaster Rovers','3-0','Blackpool','1']
+											]],
+											['Italy_Serie_A','Italy Serie A',[
+												['2h 37','Burnley','1-0','Bolton Wanderers','0'],
+												['2h 37','Doncaster Rovers','3-0','Blackpool','1']
+											]],
+											['Spainish_Primera_Division','Spainish Primera Division',[
+												['2h 37','Burnley','1-0','Bolton Wanderers','0'],
+												['2h 37','Doncaster Rovers','3-0','Blackpool','1']
+											]]
+										]],
+										['today', 'today',true,[
+											['English_Premier_League','English Premier League',[
+												['jul 21 16:00','Chelsea FC','','Manchester Utd','0'],
+												['jul 21 16:00','Manchester City','','Arsenal FC','1']
+											]],
+											['Germany_Bundesliga_1','Germany Bundesliga 1',[
+												['jul 21 16:00','Burnley','','Bolton Wanderers','0'],
+												['jul 21 16:00','Doncaster Rovers','','Blackpool','1']
+											]],
+											['Italy_Serie_A','Italy Serie A',[
+												['jul 21 16:00','Burnley','','Bolton Wanderers','0'],
+												['jul 21 16:00','Doncaster Rovers','','Blackpool','1']
+											]],
+											['Spainish_Primera_Division','Spainish Primera Division',[
+												['jul 21 16:00','Burnley','','Bolton Wanderers','0'],
+												['jul 21 16:00','Doncaster Rovers','','Blackpool','1']
+											]]
+										]]
+									]]];
+</script>
+<link href="./css/main.css" rel="stylesheet" type="text/css" />
+<link href="./css/brokage_contents.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div class='header'>
+		<h1><span>samvo&reg; betbroker</span></h1>
+		<ul id="navMenu">
+			<li id="events" onclick="window.open('events.html','_self')" class='active'>events</li>
+			<li id="betHistory" onclick="window.open('history.html','_self')">bet history</li>
+			<li id="bettingAccounts" onclick="window.open('bettingAccounts.html','_self')">betting accounts</li>
+			<li id="preferences" onclick="window.open('preference.html','_self')">preferences</li>
+			<li id="operationManagement" onclick="window.open('#','_self')">operation management</li>
+			<li id="logout" onclick="window.open('#','_self')">logout</li>
+		</ul>	
+		<div class="infoBOX">	
+			<table>
+				<tr><td>welcome <span id='userName'>username0001</span></td></tr>
+				<tr><td id="time">sep 16, 04:51 GMT+00</td></tr>
+			</table>
+			<button name="betMinitorBTN" id="betMinitorBTN" type="button">bet<br/>monitor</button>
+		</div>
+	</div>
+	<div id='leftMenu'>	
+		<div id='collapseBTN'></div>
+		<a href="javascript:closeAllFN()" id='closeAll' class="smallLinks">close all</a>	
+		<div id='menu'></div>	
+	</div>
+	<div id='searchArea'>
+		<input name="searchTeam" type="text" id='searchTeam' class='searchTXT' />
+		<input name="" type="button" id='searchTeamBTN' class="searchBTN" />		
+		<input name="" type="text" id='searchLeague' class='searchTXT' />
+		<input name="" type="button" id='searchLeagueBTN' class="searchBTN" />
+		<div class='divider' id='searchDivider'></div>
+		<div id='timeSegmentSelect' class='dropDown'>
+			<span>all</span>
+			<div class='dropMenu'>
+				<ul>
+					<li id='all'>all</li>
+					<li id='live'>live</li>
+					<li id='today'>today</li>
+					<li id='early'>early</li>
+				</ul>
+			</div>
+		</div>
+</div>
+	<div id='contentArea'>		
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td><div id='menuSpacer'></div></td>
+				<td width="100%">
+					<input name='submitBTN' id='submitBTN' type="button" value="view price"/>
+					<div id='tableArea'></div>
+					<input name='submitBTN' id='submitBTN2' type="button" value="view price"/>
+				</td>
+				<td><div style="width:10px"></div></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td width="100%">
+					<div id='footerTerms'>			
+			<p class='footerTxt'><a href="javascript:void(0)" id='termsPop'>terms and conditions</a><br/>
+			samvobetbroker.com is licensed by the alderney gambling control commission. &copy; 2013 samvo international limited. all rights reserved.<br/> 
+			samvo international limited is incorporated in alderney, company no. 1503. registered office address millenium house, ollivier street, gy9 3td.</p>
+		</div>
+				</td>
+				<td>&nbsp;</td>
+			</tr>
+		</table>		
+</div>	
+</body>
+</html>

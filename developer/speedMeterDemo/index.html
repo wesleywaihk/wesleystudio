@@ -1,0 +1,669 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>netvigator SPEEDMETER</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<style type="text/css">
+	body,html{
+		margin: 0;
+		overflow:hidden;
+		background:#131e24;
+	}
+	#mask,
+	#stage{
+		width:800px;
+		height:600px;
+	}
+	#mask{
+		display:none;
+		background:#131e24;
+		position:absolute;
+		left:0px;
+		top:0px;	
+		z-index:10;	
+	}
+	#stage{
+		position:relative
+	}
+	.home{
+		background:url(img/homeBG.jpg) no-repeat;
+	}
+	.preparing{
+		background:url(img/preparingBG.jpg) no-repeat;
+	}
+
+	.preparing  #gfx{
+		fill-opacity:0;
+		stroke: #ffffff;
+		stroke-width:.5;
+	}
+	.preparing svg#loadingChart {
+		height: 324px;
+		width: 324px;
+		position:absolute;
+		left:59.5px;
+		top:138.5px;	
+	}
+	.preparing svg#loadingChart  text{
+	  font-family: Arial;
+	  font-weight:bold;
+	  font-size: 48pt;
+	  text-anchor:middle;
+	  fill: #ffffff;
+	}
+	.preparing svg#loadingChart  #countCircle{
+		stroke:url(#grad1);
+		stroke-width: 5;
+		fill-opacity:0;
+	}
+	
+	.chart{
+		background:url(img/chartBG.png) 624px 15px no-repeat;
+	}
+	
+	.chart #graph {
+		width: 800px;
+		height: 524px;
+	}
+	
+	.chart #graph .grid {
+	  stroke: #4d4d4d;
+	  stroke-dasharray: 5 5;
+	  stroke-width: 1;
+	}
+
+	.chart #graph .points {
+	  stroke: white;
+	  stroke-width: 3;
+	}
+	.chart #graph .first_set {
+	  fill: #00554d;
+	}
+	
+	/*svg.graph .downloadChart,
+	svg.graph .uploadChart{
+	  fill-opacity: 0.5;
+	}*/
+	.chart #graph .downloadChart line,
+	.chart #graph .uploadChart line {
+	  stroke-width: 1;
+	  stroke-linecap: round;
+	}
+	.chart #graph .downloadChart line {
+	  stroke: #ff7900;
+	}
+	
+	.chart #graph .downloadChart circle,
+	.chart #graph .uploadChart circle{
+		opacity:0;
+	}
+	.chart #graph .downloadChart circle{
+		 fill: #ff7900;		 
+	}
+	.chart #graph .uploadChart line {
+	  stroke: #b7e021;	  
+	}
+	.chart #graph .uploadChart circle{
+		 fill: #b7e021;
+	}
+
+	.chart #graph .indicator{
+	  display:none;
+	}
+	.chart #graph .indicator path{
+		fill-opacity: .9;
+		fill: #ffffff;
+	  	stroke-width: 2;
+		stroke-opacity: .9;
+	}
+	.chart #graph .indicator.download path{
+		stroke: #ff7900;		
+	}
+	.chart #graph .indicator.upload path{
+		stroke: #b7e021;
+	}
+	.chart #graph .indicator text {
+	  font-family: Arial;
+	  font-size: 10pt;
+	  kerning: 1;
+	}
+	
+	.chart #graph .grid.double {
+	  stroke-opacity: 0.4;
+	}
+	
+	.chart #graph .labels {
+		font-family: Arial;
+		font-size: 14px;
+		kerning: 1;
+		fill:#cccccc;
+	}
+	.chart #graph .unitLabel{
+		font-weight:bold;
+	}
+	
+	.chart #graph .labels.x-labels {
+	  text-anchor: middle;
+	}
+	
+	.chart #graph .labels.y-labels {
+	  text-anchor: end;
+	}
+
+	#powerBar{
+		position:absolute;
+		left:26px;
+		top:524px;
+		width:754px;
+		height:59px;
+		background:url(img/powerLabel.png) no-repeat;
+	}
+	#powerBar .txt{		
+		position:absolute;
+		left:130px;
+		width:105px;
+		height:20pxt;
+		line-height:1em;
+		font-family:arial;
+		font-size:13pt;
+		color:#ccc;
+		text-align:right;
+	}
+	#powerBar #uploadTxt{
+		top:4px;
+	}
+	#powerBar #downloadTxt{
+		top:36px;
+	}
+	
+	#powerBar .bar{
+		position:absolute;
+		width:500px;
+		
+		height:4px;		
+		left:245px;		
+	}
+	#powerBar .bar > div{
+		position:relative;
+		height:inherit;
+		width:0px;
+		max-width:500px;
+	}
+	#powerBar #uploadBar{
+		top:12px;
+		background: rgba(183,224,33,.1);
+	}
+	#powerBar #uploadBar > div{
+		background: #b7e021;
+	}
+	#powerBar #downloadBar{
+		top:44px;
+		background:rgba(255,121,0,.1);
+	}
+	#powerBar #downloadBar > div{
+		background: #ff7900;
+	}
+</style>
+<script type="text/javascript" src='js/jquery-1.11.1.min.js'></script>
+</head>
+<body> 
+	<div id="mask"></div>
+	<div id="stage" class='home'></div>
+	<script type="text/javascript">		
+		var duration =10; // sec
+		var frameRate =30;
+		var unitSpeed = 1000;
+			
+		var displayStatus = 'hidle';
+		var downloadData= [261.2, 443.4, 642.6, 626.7, 749.1, 785.3, 820.1, 933.7,868.4, 906.3];
+		var uploadData= [1402.1, 3526.5, 5133.1, 6549.7, 6752.8, 7994.3, 8221.2, 9420.5,8903.3, 8727.4];		
+		
+		var chartSize = [800,524];
+		var chartEdge=[69,20,40,77]
+		
+		var graphTop=chartEdge[0];
+		var graphRight=chartSize[0]-chartEdge[1];
+		var graphBottom=chartSize[1]-chartEdge[2];
+		var  graphLeft=chartEdge[3];
+		
+		var dataMax;//=1000;
+		var yLabel;//= 'Mbps';		
+
+		var unitStep = unitSpeed/1000*1000/frameRate;		
+		
+		window.fileStatus=0;
+		window.currentStatus='';
+		window.fileInterval='';
+		window.currentFilename='';
+		
+		setTimeout(loadingStart,3000);		
+		function loadingStart(){
+			$('#mask').fadeIn(300,function(){
+				$('#stage').empty().attr('class','').addClass('preparing');
+				
+				//draw gfx
+				var gfxX=60;
+				var gfxY=139;
+				var pivot=[161.5,161.5];
+				var radius1=161;
+				var radius2=66;
+				var startPt;
+				var endPt;
+				$(SVG('svg')).attr('id','outerGfx').attr('privotX',pivot[0]).attr('privotY',pivot[1]).attr('width',800).attr('height',600).appendTo($('#stage'));
+				$(SVG('svg')).attr('id','gfx').attr('w',323).attr('h',323).attr('x',gfxX).attr('y',gfxY).appendTo($('#outerGfx'));				
+				
+				$(SVG('circle')).attr('cx',pivot[0]).attr('cy',pivot[1]).attr('r',radius1).appendTo($('#gfx'));				
+				startPt=getPositionAtAngle(pivot[0], pivot[1], radius1,-55);
+				endPt=getPositionAtAngle(pivot[0], pivot[1], radius1, 125);
+				$(SVG('line')).attr('id','line1').attr('x1',startPt[0]).attr('y1',startPt[1]).attr('x2',endPt[0]).attr('y2',endPt[1]).appendTo($('#gfx'));		
+				
+				$(SVG('circle')).attr('cx',pivot[0]).attr('cy',pivot[1]).attr('r',radius2).appendTo($('#gfx'));		
+				startPt=getPositionAtAngle(pivot[0], pivot[1], radius2,-10);
+				endPt=getPositionAtAngle(pivot[0], pivot[1], radius2, 170);
+				$(SVG('line')).attr('id','line2').attr('x1',startPt[0]).attr('y1',startPt[1]).attr('x2',endPt[0]).attr('y2',endPt[1]).appendTo($('#gfx'));		
+	
+				//draw loading counter
+				window.gColor=[[255,255,0],[255,0,0]]
+				$(SVG('svg')).attr('id','loadingChart').appendTo($('#stage'));
+				var $loadingChart = $('#loadingChart');	
+				$(SVG('defs')).appendTo($loadingChart);
+				$(SVG('linearGradient'))
+				.attr('id',"grad1")
+				.attr('x1',0)
+				.attr('y1',0)
+				.attr('x2',1)
+				.attr('y2',1)
+				.appendTo($loadingChart.children('defs'));
+				$(SVG('stop'))
+				.attr('offset','0%')
+				.attr('style',"stop-color:rgb("+window.gColor[0][0]+","+window.gColor[0][1]+","+window.gColor[0][2]+");stop-opacity:1")
+				.appendTo($loadingChart.children('defs').children('#grad1'));
+				
+				$(SVG('stop'))
+				.attr('id','gEnd')
+				.attr('offset','100%')
+				.attr('style',"stop-color:rgb("+window.gColor[1][0]+","+window.gColor[1][1]+","+window.gColor[1][2]+");stop-opacity:1")
+				.appendTo($loadingChart.children('defs').children('#grad1'));
+				
+				
+				$(SVG('text')).attr('id','loadingTxt').attr('y',183).attr('x',162).text(duration).appendTo($loadingChart);
+				$(SVG('path')).attr('id','countCircle').appendTo($loadingChart);
+				
+				displayStatus='loading';
+				
+				$(this).fadeOut(300,function(){
+					loadingCountDown();					
+				});				
+			});
+		};
+		function loadingCountDown(){
+			var count=0;
+			var countNum=duration;
+			var $loadingChart = $('#loadingChart');	
+			
+			var pivotX = 162;
+			var pivotY = 162;
+			var radius = 158;
+			
+			var loadingCountInt = setInterval(function(){
+				count++;
+				
+				//update gfx
+				var gfxDdeg = count/frameRate* 360;
+				var gfxPrivot = [$('#outerGfx').attr('privotX'), $('#outerGfx').attr('privotY')];
+				$('#gfx #line1').attr('transform','rotate('+gfxDdeg/4+' '+gfxPrivot[0]+' '+gfxPrivot[1]+')')
+				$('#gfx #line2').attr('transform','rotate('+gfxDdeg+' '+gfxPrivot[0]+' '+gfxPrivot[1]+')')
+				
+				//update count num
+				countNum =  duration-Math.floor(count/frameRate);
+				$loadingChart.children('#loadingTxt').text(countNum);
+				
+				//update circle
+				var startPt=getPositionAtAngle(pivotX, pivotY, radius, 0);
+				var endAngle =count/(duration*frameRate)*360;
+				var endPt=getPositionAtAngle(pivotX, pivotY, radius, endAngle);				
+				if(endAngle <360){
+					var D = "M"+startPt[0] + "," +startPt[1]+ "  A"+radius+","+radius+" 0 "+(endAngle<180?0:1)+",1 " +endPt[0] + "," +endPt[1];				
+					$loadingChart.children('#countCircle').attr('d',D);
+				}else{
+					$loadingChart.children('#countCircle').remove();
+					$(SVG('circle')).attr('cx',pivotX).attr('cy',pivotY).attr('r',radius).attr('id','countCircle').appendTo($loadingChart);
+				}
+				
+				// update gradient
+				var gProgress = count/(duration*frameRate);				
+				var gEnd=[];
+				for(a=0; a<3; a++){
+					gEnd[a] =Math.round(window.gColor[0][a]-(window.gColor[0][a]-window.gColor[1][a])*gProgress);
+				}	
+				$loadingChart.children('defs').children('#grad1').children('#gEnd').attr('style',"stop-color:rgb("+gEnd[0]+","+gEnd[1]+","+gEnd[2]+");stop-opacity:1");		
+				
+				if(count>= duration*frameRate){					
+					clearInterval(loadingCountInt);	
+					displayStatus='download';
+					startChart();
+				}			
+			},1000/frameRate);			
+		}		
+		
+		function startChart(){			
+			$('#mask').fadeIn(300,function(){
+				$('#stage').empty().attr('class','').addClass('chart');
+				drawChart(downloadData);					
+				$('#mask').fadeOut(300,function(){
+					playChart(downloadData,'download');
+				});
+			});
+		}
+		
+		function drawChart(data){	
+			//draw chart
+			$(SVG('svg')).attr('class','graph').attr('id','graph').appendTo($('#stage'));	
+			var $svg = $('.graph');
+			
+			//get data MAX point
+			getDataMax(data);
+	
+			
+			//-//draw Y
+			$(SVG('g')).attr('class','grid y-grid').appendTo($svg);
+			$(SVG('g')).attr('class','labels y-labels').appendTo($svg);
+			drawY();
+			//-//end of draw Y	
+			//-//draw X
+			$(SVG('g')).attr('class','grid x-grid').appendTo($svg);
+			$(SVG('g')).attr('class','labels x-labels').appendTo($svg);
+			var xStep=duration;
+			for(a=12; a>=2;a--){
+				if(duration%a==0 ){			
+					xStep=a;
+					break;
+				}
+			}
+			xStep++;
+			var unitX = (graphRight-graphLeft)/xStep;
+			window.lineUnitX=unitX;
+			for(a=0; a<=xStep; a++){
+				var tmpX= Math.round(graphLeft+a*unitX)+.5;
+				$(SVG('line')).attr('x1',tmpX).attr('x2',tmpX).attr('y1',graphTop).attr('y2',graphBottom).appendTo($svg.children('.x-grid'));
+				 if(a!=xStep){
+					var txtVar =   duration/(xStep-1)*a; 
+					$(SVG('text')).attr('x',tmpX).attr('y',graphBottom+20).text(txtVar).appendTo($svg.children('.x-labels'));			
+				}else if(a==xStep){
+					$(SVG('text')).attr('class','unitLabel').attr('x',tmpX-11).attr('y',graphBottom+20).text('Sec').appendTo($svg.children('.x-labels'));	 
+				};
+			}
+			//-//end of draw X
+			
+			//-//draw downloadChart
+			$(SVG('g')).attr('class','downloadChart').appendTo($svg);
+			//-//draw uploadChart
+			$(SVG('g')).attr('class','uploadChart').appendTo($svg);
+			
+			//-//draw floating indicator
+			$(SVG('g')).attr('class','indicator').appendTo($svg);
+			$(SVG('svg')).attr('x',-1000).attr('y',-1000)
+			.attr('w',60).attr('h',36)
+			.attr('rBG','M1,17.5 L8,13 L8,1 L59,1 L59,34 L8,34 L8,22 Z')
+			.attr('rTxt',14)
+			.attr('lBG','M1,1 L52,1 L52,13 L59,17.5 L52,22 L52,34 L1,34 Z')
+			.attr('lTxt',6)
+			.appendTo($svg.children('.indicator'));
+			$(SVG('path')).appendTo($svg.children('.indicator').children('svg'));
+			$(SVG('text')).attr('id','txt').attr('y',23).text('').appendTo($svg.children('.indicator').children('svg'));
+			//-//end of draw floating indicator
+			//end of draw chart
+			
+			// create power Bar			
+			$('#stage').append('<div id="powerBar"/>');
+			$('#powerBar').append('<div class="txt" id="uploadTxt">0.00 '+yLabel+'</div>').append('<div class="bar" id="uploadBar"/>')
+			.append('<div class="txt" id="downloadTxt">0.00 '+yLabel+'</div>').append('<div class="bar" id="downloadBar"/>');
+			$('#uploadTxt').data('num',0);
+			$('#downloadTxt').data('num',0);
+			$('#uploadBar').data('num',0).append('<div/>');
+			$('#downloadBar').data('num',0).append('<div/>');			
+		};
+		
+		function playChart(data,trgChart){
+			var $svg = $('.graph');	
+			var unitProgress=0;	
+			if(trgChart=='download'){
+				$parent =$svg.children('.downloadChart');
+			}else{
+				$parent =$svg.children('.uploadChart');
+			}
+			
+			var graphValue=[[graphLeft,graphBottom]];
+			
+			//draw the first line
+			$(SVG('line')).attr('class','line1').attr('x1',graphValue[0][0]).attr('y1',graphValue[0][1]).attr('x2',graphValue[0][0]).attr('y2',graphValue[0][1]).appendTo($parent);	
+			
+			//width per sec
+			var xStep=duration;			
+			var unitX = (graphRight-graphLeft-window.lineUnitX)/xStep;			
+			window.graphUnitX = unitX;
+			
+			var trgSec=1;
+			var currFrame=0;
+			var graphInterval = setInterval(function(){
+				currFrame++;
+				unitProgress=currFrame/frameRate;
+
+				graphValue[trgSec]= [];		
+			
+				//get X	
+				graphValue[trgSec][0]=(graphLeft+ (trgSec-1)*unitX+unitX*unitProgress);	
+				//get Y	
+				var yUnitValue =graphTop+window.lineUnitY+(graphBottom-graphTop-window.lineUnitY)*(dataMax-data[trgSec-1])/dataMax;	
+				var valChange = graphValue[trgSec-1][1]-yUnitValue ;	
+				graphValue[trgSec][1]=(graphValue[trgSec-1][1] -  valChange * unitProgress);
+						
+				//update current line
+				$parent.children('.line'+trgSec).attr('x2',graphValue[trgSec][0]).attr('y2',graphValue[trgSec][1]);
+				
+				//power bar
+				var powerBarValChange =  (data[trgSec-1] || 0)-(data[trgSec-2] || 0);
+				var powerBarVal =Math.round(((data[trgSec-2] || 0)+ powerBarValChange * unitProgress)*100)/100;
+				powerBarTxtFN(trgChart,powerBarVal);
+				powerBarFN(trgChart,powerBarVal,dataMax);		
+	
+				//loop control
+				if(unitProgress>=1){			
+					if(trgSec<data.length){
+						//draw next line
+						$(SVG('line')).attr('class','line'+(trgSec+1)).attr('x1',graphValue[trgSec][0]).attr('y1',graphValue[trgSec][1])
+						.attr('x2',graphValue[trgSec][0]).attr('y2',graphValue[trgSec][1])
+						.appendTo($parent);
+						
+						drawDot();
+						
+						currFrame=0;
+						trgSec+=1;				
+					}else{
+					 drawDot();
+					 // graph finished
+					clearInterval(graphInterval);				
+					if(trgChart=='download'){							
+						displayStatus='upload';
+						setTimeout(rescaleChart,1500);
+					}
+				}					
+				function drawDot(){
+					//draw point
+					$(SVG('circle')).attr('id','dot'+trgSec)
+					.attr('cx',graphValue[trgSec][0]).attr('cy',graphValue[trgSec][1]).attr('r',4.5).attr('indClass',trgChart).attr('speed',data[trgSec-1])
+					.appendTo($parent)
+					.animate({opacity:1},200);				
+					$trgDot = $parent.children('#dot'+trgSec);
+						
+					$trgDot.mouseover(function(){
+						$(this).attr('r',8.5);		
+						indSpace=10;
+						$indSvg = $('.indicator > svg');
+							
+						var txt = (yLabel=='Gbps' ? Number($(this).attr('speed'))/1024 : Number($(this).attr('speed'))).toFixed(2)
+						$indSvg.children('#txt').text(txt);
+							
+						if(parseInt($(this).attr('cx'))+parseInt($indSvg.attr('w'))+indSpace<$('svg.graph').width()){
+							$indSvg.children('path').attr('d',$indSvg.attr('rBg'));
+							$indSvg.children('#txt').attr('x',$indSvg.attr('rTxt'));
+							$('.indicator svg').attr('x',parseInt($(this).attr('cx'))+indSpace).attr('y',$(this).attr('cy')-parseInt($indSvg.attr('h'))/2);
+						}else{
+							$indSvg.children('path').attr('d',$indSvg.attr('lBg'));
+							$indSvg.children('#txt').attr('x',$indSvg.attr('lTxt'));
+							$('.indicator svg').attr('x',parseInt($(this).attr('cx'))-parseInt($('.indicator > svg').attr('w'))-indSpace)
+							.attr('y',$(this).attr('cy')-parseInt($indSvg.attr('h'))/2);
+						}
+				
+						if($(this).attr('indClass')=='download' ){
+							$('svg.graph').children('.indicator').attr('class', 'indicator download'); 
+						}else{
+							$('svg.graph').children('.indicator').attr('class', 'indicator upload'); 
+						}
+						$('.indicator').stop().fadeIn(200);		
+					}).mouseout(function(){
+						$(this).attr('r',4.5);
+						
+						$indSvg = $('.indicator > svg');
+						$('.indicator').stop().fadeOut(200,function(){
+							$indSvg.children('path').attr('d','');
+							$indSvg.children('#txt1').text('');
+							$indSvg.children('#txt2').text('');
+							$indSvg.attr('x',-1000).attr('y',-1000);
+						});
+					});
+					}					
+				};
+			},unitStep);
+		}
+		
+		function rescaleChart(){
+			//get data MAX point
+			var oldMax = dataMax;	
+			var tmp = downloadData.concat(uploadData);
+			getDataMax(tmp);
+			
+			if(dataMax>oldMax){
+				// need rescale
+				var $svg = $('.graph');
+				var scaleDuration = 2//sec
+				
+				$('.y-labels, .y-grid, #powerBar .txt').fadeOut(scaleDuration*1000*.7);
+
+				//rescale download graph --		
+				var data = downloadData;
+				
+				var unitX = window.graphUnitX;	
+				var yStep = 11;
+				
+				var currFrame=0;
+				var rescaleInterval = setInterval(function(){					
+					currFrame++;
+					var unitProgress=currFrame/frameRate/scaleDuration;
+			
+					var tmpMax;
+					if(currFrame<frameRate*scaleDuration){	
+						tmpMax = oldMax+(dataMax-oldMax)*unitProgress;
+					}else{	
+						tmpMax=dataMax;
+					};
+		
+					//-//rescale Y
+					var compressArea = (tmpMax-oldMax)/tmpMax * (graphBottom-graphTop);
+					var tempGraphTop= graphTop+compressArea;					
+					var unitY=(graphBottom-tempGraphTop)/yStep;
+					
+					for(a=0; a<yStep; a++){
+						var tmpY=Math.round(graphBottom-a*unitY)-.5;
+						$svg.children('.y-grid').children('.line'+(a+1)).attr('y1',tmpY).attr('y2',tmpY);
+						$svg.children('.y-labels').children('.txt'+(a+1)).attr('y',tmpY+5);	
+					}
+					//-//end of rescale Y	
+					//update graph
+					var graphValue= [];
+					graphValue[0]=[];
+					graphValue[0][0]=graphLeft;
+					graphValue[0][1]=graphBottom;
+					for(a=1;a<=data.length;a++){
+						graphValue[a]=[];
+						//get X	
+						graphValue[a][0]=graphLeft+a*unitX;
+						//get Y		
+						graphValue[a][1]=tempGraphTop+unitY+ (graphBottom-tempGraphTop-unitY) * (oldMax-data[a-1])/oldMax;							
+						
+						$svg.children('.downloadChart').children('.line'+a).attr('x1',graphValue[a-1][0]).attr('y1',graphValue[a-1][1]).attr('x2',graphValue[a][0]).attr('y2',graphValue[a][1]);
+						$svg.children('.downloadChart').children('#dot'+a).attr('cx',graphValue[a][0]).attr('cy',graphValue[a][1]);							
+						powerBarFN('download',$('#downloadTxt').data('num'),tmpMax);
+							
+					}
+					if(currFrame>=frameRate*scaleDuration){							
+						clearInterval(rescaleInterval);
+						$('.y-labels, .y-grid').children().remove();	
+						drawY();
+						powerBarTxtFN('upload',$('#uploadTxt').data('num'));			
+						powerBarTxtFN('download',$('#downloadTxt').data('num'));
+		
+						$('.y-labels, .y-grid, #powerBar .txt').fadeIn(scaleDuration*1000*.5,function(){
+							playChart(uploadData,'upload');	
+						});
+					}		
+				},1000/frameRate);	
+				//end of rescale download graph --	
+			}else{
+				// no need rescale
+				playChart(uploadData,'upload');
+			}
+		}		
+			
+		function drawY(){	
+			var $svg = $('.graph');
+			var yStep = 11;
+			var unitY=(graphBottom-graphTop)/yStep;
+			window.lineUnitY=unitY;
+			for(a=0; a<=yStep; a++){
+				var tmpY= Math.round(graphBottom-a*unitY)+.5;
+				$(SVG('line')).attr('class','line'+(a+1)).attr('x1',graphRight).attr('x2',graphLeft).attr('y1',tmpY).attr('y2',tmpY).appendTo($svg.children('.y-grid'));				
+				if(a!=yStep && a!=0){					
+					var txtVar =   dataMax/(yStep-1)*a;
+					if(yLabel=='Gbps'){  txtVar= Math.round(txtVar/1024)};					
+					$(SVG('text')).attr('class','txt'+(a+1)).attr('x',graphLeft-15).attr('y',tmpY+5).text(txtVar).appendTo($svg.children('.y-labels'));	
+				}else if(a== yStep ){
+					$(SVG('text')).attr('class','unitLabel').attr('x',graphLeft-8).attr('y',tmpY-15).text(yLabel).appendTo($svg.children('.y-labels'));	 
+				}
+			}
+		}
+		function powerBarTxtFN(trg,num){
+			var Txt= (yLabel=='Gbps' ? num/1024 : num).toFixed(2)  + ' '+yLabel;
+			$('#'+trg+'Txt').data('num',num).text(Txt);
+		}
+		function powerBarFN(trg,num,dMax){
+			$('#'+trg+'Bar > div').width(Math.round(num/dMax * 500));				
+		}
+		function getPositionAtAngle(x, y, radius, angle) {
+			var radian = (angle - 90) * Math.PI / 180.0;
+			var result = new Array();
+			result.push(x + radius * Math.cos(radian));
+			result.push(y + radius * Math.sin(radian));
+			return result;
+		}
+		function SVG(tag){
+			return document.createElementNS('http://www.w3.org/2000/svg', tag);
+		}
+		
+		function getDataMax(data){
+			var tmp = Number(Math.max.apply(Math,data));				
+			if(tmp > 1000){
+				dataMax=  10240;
+				yLabel = 'Gbps';
+			}else if(tmp > 500){
+				dataMax=  1000;
+				yLabel = 'Mbps';
+			}else{
+				dataMax=  500;
+				yLabel = 'Mbps';
+			}	
+		}
+</script>
+</body>
+</html>

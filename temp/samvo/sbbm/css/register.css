@@ -1,0 +1,75 @@
+@charset "utf-8";
+/* CSS Document */
+#register{
+	z-index:200;
+	width:100%;
+	height:100%;
+	background:#ccc;
+	position:absolute;
+	left:0px;
+	top:100%;	
+}
+#register #closeBTN{
+	width:30px;
+	height:30px;
+	background:url(../images/closeBTN.png) no-repeat center;
+	cursor:pointer;
+	position:absolute;
+	padding:10px;
+	right:10px;
+	top:23px;
+	z-index:201;
+}
+#register .content{
+	display:block;
+	width:640px;
+	background:none;
+	z-index:200;
+}
+#register .content > h3{
+	background:none;
+	font-size:24pt;
+	line-height:30pt;
+	cursor:default;
+	
+	padding:10px 0px 0px 0px;
+	margin:18px 0px 0px 20px;
+	color:#000;
+	font-weight:normal;
+	
+	cursor:pointer;
+	width:550px;
+}
+#register section{
+	padding:0px;
+	margin:0px 0px 40px 0px;
+}
+#register  .over18{
+	font-size:14pt;
+	line-height:16pt;
+	padding:5px 5px 0px 71px;
+	background: url(../images/register/over18.png) 6px 50% no-repeat;
+	width:auto;
+	height:85px;
+}
+#register .txtField{
+	width:551px;
+}
+#registerReceive{
+	position:relative;
+}
+#registerReceive span{
+	display:block;
+	width:310px;
+	font-size:14pt;
+	line-height:18pt;
+	position:absolute;
+	left:0px;
+	top:12px;
+}
+#registerReceive .toggle{
+	float:right;
+}
+#register .submitButton, #register .resetButton{
+	width:252px;
+}

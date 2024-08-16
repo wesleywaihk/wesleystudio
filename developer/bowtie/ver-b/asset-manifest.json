@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/developer/bowtie/ver-b/static/css/main.bbcaf19f.chunk.css",
+    "main.js": "/developer/bowtie/ver-b/static/js/main.ba7190eb.chunk.js",
+    "main.js.map": "/developer/bowtie/ver-b/static/js/main.ba7190eb.chunk.js.map",
+    "runtime-main.js": "/developer/bowtie/ver-b/static/js/runtime-main.9cdcabff.js",
+    "runtime-main.js.map": "/developer/bowtie/ver-b/static/js/runtime-main.9cdcabff.js.map",
+    "static/css/2.af3c1da9.chunk.css": "/developer/bowtie/ver-b/static/css/2.af3c1da9.chunk.css",
+    "static/js/2.809e4d97.chunk.js": "/developer/bowtie/ver-b/static/js/2.809e4d97.chunk.js",
+    "static/js/2.809e4d97.chunk.js.map": "/developer/bowtie/ver-b/static/js/2.809e4d97.chunk.js.map",
+    "index.html": "/developer/bowtie/ver-b/index.html",
+    "precache-manifest.8838ce9059ebbffed704500b9993b73e.js": "/developer/bowtie/ver-b/precache-manifest.8838ce9059ebbffed704500b9993b73e.js",
+    "service-worker.js": "/developer/bowtie/ver-b/service-worker.js",
+    "static/css/2.af3c1da9.chunk.css.map": "/developer/bowtie/ver-b/static/css/2.af3c1da9.chunk.css.map",
+    "static/css/main.bbcaf19f.chunk.css.map": "/developer/bowtie/ver-b/static/css/main.bbcaf19f.chunk.css.map",
+    "static/js/2.809e4d97.chunk.js.LICENSE.txt": "/developer/bowtie/ver-b/static/js/2.809e4d97.chunk.js.LICENSE.txt",
+    "static/media/doctors.csv": "/developer/bowtie/ver-b/static/media/doctors.d39fa9dc.csv",
+    "static/media/logo.png": "/developer/bowtie/ver-b/static/media/logo.4f8064a2.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9cdcabff.js",
+    "static/css/2.af3c1da9.chunk.css",
+    "static/js/2.809e4d97.chunk.js",
+    "static/css/main.bbcaf19f.chunk.css",
+    "static/js/main.ba7190eb.chunk.js"
+  ]
+}

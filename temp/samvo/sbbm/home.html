@@ -1,0 +1,131 @@
+<script>
+iconURL=[null,
+	'http://www.gamcare.org.uk/',
+	'http://www.gamblingtherapy.org/',
+	'http://www.gamblingcontrol.org/'];
+
+$('#home').ready(function(){	
+	$('#home #innerScroller').width(pageW*3);
+	$('#home .menu, #home .content').width(pageW);
+	for(a=1; a<pages[0].length;a++){
+		if(checkHash=='#'+pages[0][a]){
+			openMoreInfo(a, false);
+			break;
+		};
+	};	
+	resize();
+	setTimeout( function(){	
+		for(a=1;a<=pages.length;a++){
+			$('#home #p'+a).data('num',a).click(function(){
+				gotoPage($(this).data('num'),'','');		
+			});			
+		};
+		$('#home footer #icon1').click(function(){
+			openMoreInfo(6, true);	
+		});			
+		for(a=2; a<=4; a++){
+			$('#home footer #icon'+a).data('num',a).click(function(){
+				window.open(iconURL[$(this).data('num')-1],'_blank');	
+			});	
+		};		
+		$('#home footer #moreInfo').click(function(){
+			openMoreInfo(1, true);	
+		});	
+		$('#home footer #cp').click(function(){
+			openMoreInfo(7, true);	
+		});
+		$('#home #content2 > h3').click(function(){
+			changeHash(pages[currPage-1][0],'');			
+			$('#home #innerScroller').stop().animate({'left':0},animTime*.66);
+			upDownPosition(0,animTime*.66);
+		});		
+		$("#home #content2 .subMenu > li").each(function( index ) {
+			$(this).data('num',index+2).click(function(){
+				openMoreInfo($(this).data('num'), true);					
+			});
+		});				
+		$('#home #subPage1 > h4').click(function(){
+			openMoreInfo(1, true);
+		});
+	}, 100);	 
+	
+	function openMoreInfo(NUM, anim){
+		if(!freezeBTN){
+			freezeBTN=true;
+			changeHash(pages[0][NUM],'');			
+			if(anim){
+				aTime=animTime*.66;
+			}else{
+				aTime=0;
+			}
+			if(NUM==1){
+				upDownPosition(0-pageW,aTime);
+				$('#home #innerScroller').stop().animate({'left':0-pageW},aTime,function(){
+					$('#home #subPage1 > h4').empty();
+					$('#home #subPage1 .textScroll2').empty();
+					freezeBTN=false;
+				});				
+			}else{
+				$('#home #subPage1 > h4').empty().html($('#home #content2 .textScroll2 #sub'+(NUM-1)).text());
+				$('#home #subPage1 .textScroll2').empty().load(pages[currPage-1][0]+"_"+pages[currPage-1][NUM]+'.html');
+				upDownPosition(0-2*pageW,aTime);	
+				$('#home #innerScroller').stop().animate({'left':0-2*pageW},aTime,function(){
+					freezeBTN=false;
+				});
+			};
+		};
+	};
+});
+</script>
+<div id='home'>
+	<div id='innerScroller'>
+		<div id='content1' class='content menu'>	
+			<h1><span>samvo betbroker</span></h1>
+			<ul id='p1menu'>
+				<li id='p2'>about us</li>
+				<li id='p3'>privileges</li>
+				<li id='p4'>transactions</li>
+				<li id='p5'>faqs</li>
+				<li id='p6'>contact us</li>
+				<li id='p7'>apply now</li>
+			</ul>
+			<footer>
+				<nav>
+					<ul>
+						<li id='icon1'><span>age verification</span></li>
+						<li id='icon2'><span>GAMCARE</span></li>
+						<li id='icon3'><span>gambling therapy</span></li>
+						<li id='icon4'><span>The Alderney Gambling Control</span></li>
+						<li id='icon5'><span>skrill moneybookers</span></li>
+						<li id='icon6'><span>bank wire</span></li>
+					</ul>
+					<div id='moreInfo'>more info</div>
+				</nav>
+				<p>by accessing, continuing to use or navigating throughout this site, you accept that we will use certain cookies to give you the best possible online experience. see our <a id='cp'>cookie policy</a> for more information on cookies and how to manage them. samvobetbroker.com is licensed by the alderney gambling control commission. © 2014 samvo international limited. all rights reserved. samvo international limited is incorporated in alderney, company no. 1503. registered office address millenium house, ollivier street, gy9 3td.</p>
+			</footer>	
+		</div>
+		<div id='content2' class='content'>
+			<h3>more info</h3>
+			<div class="textScroll">
+				<div class="textScroll2">
+					<ul class='subMenu'>
+						<li id='sub1'>terms &amp; conditions</li>
+						<li id='sub2'>rules &amp; regulations</li>
+						<li id='sub3'>privacy policy</li>
+						<li id='sub4'>responsible gambling</li>
+						<li id='sub5'>age verification</li>
+						<li id='sub6'>cookie policy</li>
+					</ul>
+				</div>
+			</div>			
+			<div class="subPage" id="subPage1">
+				<h4></h4>			
+				<div class="textScroll">
+					<div class="textScroll2">			
+					</div>	
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>
+

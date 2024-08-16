@@ -1,0 +1,63 @@
+<script>
+$('#privileges').ready(function(){	
+	$('#privileges #innerScroller').width(pageW*2);
+	$('#privileges .menu, #privileges .content').width(pageW);
+	resize();
+	setTimeout( function(){	
+		$("#privileges #content1 #p1menu > li").each(function( index ) {
+			$(this).data('num',index+1).click(function(){
+				openSubPage($(this).data('num'), true);					
+			});
+		});
+		$('#privileges #content2 > h3').click(function(){
+			openSubPage(0, true);	
+		});
+	}, 100);	 
+	function openSubPage(NUM, anim){
+		subPage=['competitiveodds','betsanywhere','businesshours','personalisedalerts'];
+		if(!freezeBTN){
+			freezeBTN=true;
+			if(anim){
+				aTime=animTime*.66;
+			}else{
+				aTime=0;
+			}
+			if(NUM==0){
+				upDownPosition(0,aTime);
+				$('#privileges #innerScroller').stop().animate({'left':0},aTime,function(){
+					$('#privileges #content2 > h3').empty();
+					$('#privileges #content2 .textScroll2').empty();
+					freezeBTN=false;
+				});	
+			}else{
+				$('#privileges #content2 > h3').empty().text($('#privileges #p1menu > #p'+NUM).text());
+				$('#privileges #content2 .textScroll2').empty().load(pages[currPage-1][0]+"_"+subPage[NUM-1]+'.html');
+				upDownPosition(0-1*pageW,aTime);	
+				$('#privileges #innerScroller').stop().animate({'left':0-pageW},aTime,function(){
+					freezeBTN=false;
+				});
+			};
+		};
+	};
+});
+</script>
+<div id='privileges'>
+	<div id='innerScroller'>
+		<div id='content1' class='content menu'>
+			<h2 style=''>privileges</h2>
+			<p>our privileges, like everything else we offer, are a cut above the rest. you'll find our stake sizes are flexible enough to satisfy even the most voracious high rollers. while our brokers will go the extra mile to ensure your betting experience is everything you desire. some of the exclusive privileges you will enjoy with us:</p>
+			<ul id='p1menu'>
+				<li id='p1'>the most competitive odds</li>
+				<li id='p2'>place your bets from anywhere</li>
+				<li id='p3'>extended business hours</li>
+				<li id='p4'>personalised price alerts</li>
+			</ul>
+		</div>
+		<div id='content2' class='content'>
+			<h3></h3>
+			<div class="textScroll">
+				<div class="textScroll2"></div>
+			</div>
+		</div>
+	</div>
+</div>

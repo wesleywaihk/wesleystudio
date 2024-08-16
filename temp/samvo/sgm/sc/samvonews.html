@@ -1,0 +1,131 @@
+<script>
+$('#samvonews').ready(function(){	
+	var newsSubpageNum=2;
+	var newsNum=0;
+	$('#samvonews #innerScroller').width(pageW*(newsSubpageNum));	
+	if (!xmlData){	
+		$.ajax({ 			
+			type: "GET",
+			url: "data.xml?"+window.dateObj.getTime(),	
+			dataType: "xml",
+			success: onLoadData
+		});	
+	}else{
+		updateNews('',true);
+	}	
+	function onLoadData(xml){	
+		xmlData = xml;
+		updateNews('',true);		
+	}
+	function updateNews(filter,startUp){	
+		$('#samvonews #newsSearch').val(filter);
+		$('#samvonews #content2 > .textScrollNews > .textScroll2 > ul').empty();
+		var subPageList = [];
+		$(xmlData).find("news").each(function(){		
+			var str = $(this).find("title").text();
+			str += " " + $(this).find("content").text();
+			var filterList = (filter)?filter.split(" "):[0];	
+			for (var i=0; i<filterList.length; i++){
+				var filterKey = filterList[i];
+				if (!filter || str.toLowerCase().indexOf(filterKey.toLowerCase()) != -1 ){	
+					var id= $(this).attr("id");
+					subPageList.push(id);
+					tempDate=$(this).find("date").text().substr(0,4)+'年'+$(this).find("date").text().substr(5,2)+'月'+$(this).find("date").text().substr(8,2)+'日';
+					$('#samvonews #content2 .textScroll2 ul').append('<li id="subBTN'+id+'">'+
+						'<div class="title">'+$(this).find("title").text()+'</div>'+
+						'<div class="info">'+tempDate+"&nbsp;&nbsp;"+$(this).attr("company")+'</div>'+	
+					'</li>');					
+					$('#samvonews #content2 #subBTN'+id).data('XML',$(this)).off().click(function(){
+						writeNews($(this).data('XML'));
+						$('#samvonews #content2 #subPage1').stop().animate({'left':0},animTime/2);
+					});
+				};		
+			};			
+		});		
+		newsNum=window.location.hash.split(".")[1];	
+		if(newsNum!=undefined){
+			$(xmlData).find("news").each(function(){
+				if($(this).attr('id')==newsNum){					
+					writeNews($(this));	
+					$('#samvonews #content2 #subPage1').css('left',0);
+					leftNum=0-pageW;
+					$('#samvonews #innerScroller').css('left',leftNum);	
+					upDownPosition(leftNum,0);					
+				}					
+			});					
+		};	
+		function writeNews(XML){
+			changeHash(pages[currPage-1][0]+'.'+XML.attr('id'));
+			$('#samvonews #content2 #subPage1 .textScroll2').append('<h5>'+XML.find("title").text()+'</h5>');
+			tempDate=XML.find("date").text().substr(0,4)+'年'+XML.find("date").text().substr(5,2)+'月'+XML.find("date").text().substr(8,2)+'日';			
+			$('#samvonews #content2 #subPage1 .textScroll2').append('<div class="info">'+tempDate+"&nbsp;&nbsp;"+XML.attr("company")+'</div>');
+			if(XML.find("image").text()!=''){
+				$('#samvonews #content2 #subPage1 .textScroll2').append('<img id="postIMG" src="'+siteAddress+XML.find("image").text()+'" />');
+			};
+			$('#samvonews #content2 #subPage1 .textScroll2').append('<div class="contentTXT">'+XML.find("content").text()+'</div>');
+			$('#samvonews #content2 #subPage1 .textScroll2 .contentTXT *').off().removeClass().removeAttr('style');			
+		};
+		resize();
+
+		if(startUp){	
+			setTimeout( function(){
+				$('#samvonews #newsSearch').keyup(function(e){
+					if(e.keyCode == 13){
+						updateNews($(this).val(),false);	
+					}
+				});
+				$('#samvonews #newsSearch').blur(function(){
+					updateNews($(this).val(),false);
+				});
+				for(a=0; a<=$('#samvonews #content1 li:last-child').index();a++){
+					$('#samvonews #content1 li#tit'+(a+1)).click(function(){																							
+						changeHash(pages[currPage-1][0]);
+						leftNum=0-($(this).index()+1)*pageW;
+						$('#samvonews #innerScroller').stop().animate({'left':leftNum},animTime/2);
+						upDownPosition(leftNum,animTime/2);
+					});		
+				};
+				$('#samvonews .content > h3').click(function(){
+					changeHash(pages[currPage-1][0]);
+					$('#samvonews  #innerScroller').stop().animate({'left':0},animTime/2, function(){
+						upDownPosition(0,animTime/2);
+						$('#newsSearch').val('');
+						updateNews($(this).val(),false);
+					});
+					upDownPosition(0,animTime/2);
+				});	
+				$('#samvonews #content2 #subPage1 > h4').click(function(){
+					changeHash(pages[currPage-1][0]);				
+					$(this).parent().stop().animate({'left':pageW},animTime/2,function(){
+						$('#samvonews #content2 #subPage1 .textScroll2').empty();
+					});																												 
+				});			
+			}, 100);
+		};
+	};
+});
+</script>
+<div id='samvonews'>
+	<div id='innerScroller'>
+		<div id='content1' class='content menu'>	
+			<ul>
+				<li id='tit1'>三和新闻信息</li>
+			</ul>
+		</div>
+		<div id='content2' class='content'>
+			<h3>三和新闻信息</h3>
+			<input type="text" name="newsSearch" id="newsSearch" placeholder="搜索" >
+			<div class="textScrollNews">
+				<div class="textScroll2">
+					<ul></ul>
+				</div>
+			</div>
+			<div class="subPage" id="subPage1">
+				<h4>三和新闻信息</h4>			
+				<div class="textScroll">
+					<div class="textScroll2"></div>	
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>

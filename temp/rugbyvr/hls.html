@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="https://bitmovin-a.akamaihd.net/bitmovin-player/stable/7/bitmovinplayer.js"></script>
+	<link rel="stylesheet" href="css/bitmovin.css"> 
+    </head>
+    <body>
+    <div id="player"></div>
+   <script type="text/javascript">
+    var conf = {
+         key:       "8d5dad27-9d10-43aa-8c7b-76a78d73a0ff",
+        source: {
+//        progressive: "http://dash2.ideallive.tv/dash_video-23564642_6000000bps.mp4",
+//          dash:"http://dash2.ideallive.tv/dash_manifest_TB.mpd",
+          hls: "http://wpc.51C8D.systemcdn.net/8051C8D/hls2/index.m3u8",
+//	  poster:"banner.jpg",
+           vr: {
+              startPosition :    0,
+            contentType :    'single',
+//            stereo:true
+             }
+        }
+    };
+    var player = bitmovin.player("player");
+    player.setup(conf).then(function(value) {
+        // Success
+        console.log("Successfully created bitmovin player instance");
+    }, function(reason) {
+        // Error!
+        console.log("Error while creating bitmovin player instance");
+    });
+</script>
+    </body>
+</html>

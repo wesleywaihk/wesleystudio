@@ -1,0 +1,33 @@
+<script>
+$('#home').ready(function(){
+	resize();
+	setTimeout( function(){	
+		for(a=1;a<=pages.length;a++){
+			$('#home #p'+a).data('num',a).click(function(){
+				gotoPage($(this).data('num'),false);		
+			});			
+		};
+		$('#home .en').click(function(){
+			swapLang('en');
+		});
+		$('#home .tw').click(function(){
+			swapLang('tc');
+		});		
+	}, 100);
+});
+</script>
+<div id="home">
+	<ul>
+		<li id='p2'>关于我们</li>
+		<li id='p3'>业务范围</li>
+		<li id='p4'>三和新闻信息</li>
+		<li id='p5'>合作机会</li>
+		<li id='p6'>职位招聘</li>
+		<li id='p7'>联络我们</li>
+		<li id='lang'>
+			<span class="en">eng</span>
+			<span lang="zh" class="tw">繁體</span>
+			<span lang="zh" class="cn">简体</span>
+		</li>
+	</ul>
+</div>

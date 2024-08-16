@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="http://storage.googleapis.com/vrview/2.0/build/vrview.min.js"></script>
+        <script>
+            window.addEventListener('load', onVrViewLoad)
+                function onVrViewLoad() {
+                var vrView = new VRView.Player('#vrview', {
+                    video: 'http://dash2.ideallive.tv/dash_manifest_TB.mpd',
+                    is_stereo: true,
+                    is_vr_off: false,
+		    preview:'banner.jpg',
+//                    width:'640',
+//		    height:'480'
+                });
+                }
+        </script>
+    </head>
+    <body>
+    <div id="vrview"></div>
+    </body>
+</html>

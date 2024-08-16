@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class='font-size-m'>
+<!--
+  lang="en / zh-HK / zh-CN"
+  class='font-size-s / font-size-m / font-size-l'
+-->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+<title>登记帐户 | hongkong post E-Services</title>
+<link rel="apple-touch-icon" sizes="57x57" href="./img/icons/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="./img/icons/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="./img/icons/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="./img/icons/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="./img/icons/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="./img/icons/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="./img/icons/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="./img/icons/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./img/icons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="./img/icons/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./img/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="./img/icons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./img/icons/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="./styles/app.min.css" />
+<script defer type="text/javascript" src="./js/app.min.js"></script>
+</head>
+
+<body class="theme-1"><!-- class=" theme-1 / theme-2 / theme-3 " -->
+  <div class="wrapper">
+    <header>
+  <div class="shadow-sm">
+    <nav class="container navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="https://accountsdev.hongkongpost.hk/epage">
+        <img src="./img/header/hkp_logo.png" class="d-inline-block align-top" alt="Hongkong Post" height="60">
+        <img src="./img/header/hkp_logo_l.jpg" class="d-none d-sm-inline-block align-top align-top" alt="Hongkong Post" height="60">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div id="navbarNav" class="collapse navbar-collapse order-1">
+        
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0 settings">
+          <li class="nav-item"><a class="nav-link" href="./register_en.html" lang="en">English</a></li>
+          <li class="nav-item"><a class="nav-link" href="./register_zhhk.html" lang="zh-hk">繁</a></li>
+          <li class="nav-item active"><a class="nav-link" href="./register_zhcn.html" lang="zh-CN">简</a></li>
+          
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+    <main class="container-fluid register">
+      <div class="container">
+        <div>
+          <h1>登记香港邮政帐户</h1>
+          <form id="regForm" class="needs-validation" action="./register/process" method="post" autocomplete="off">
+    				<div class="form-group form-row">
+    					<div class="col custom-control">
+    						<label for="inputLoginname">帐户名称</label> <input type="text" pattern="[A-Za-z0-9][A-Za-z0-9_@.-]{3,20}" class="form-control" name="inputLoginname" aria-describedby="loginnameHelp" placeholder="必须" required="" maxlength="20"><small id="loginHelp" class="form-text text-muted">
+    							<ul class="pl-4">
+    								<li>接受字母数字字符。</li>
+    								<li>长度由3至20。</li>
+    							</ul>
+    						</small>
+    					</div>
+    				</div>
+    				<div class="form-group form-row">
+    					<div class="col">
+    						<label for="inputEmail">电邮</label> <input type="email" class="form-control" name="inputEmail" aria-describedby="emailHelp" placeholder="必须" required="" maxlength="30"><small id="emailHelp" class="form-text text-muted">
+    							<ul class="pl-4">
+    								<li>最长为30字元。</li>
+    							</ul>
+    						</small>
+    					</div>
+    				</div>
+    				<div class="form-group form-row">
+    					<div class="col-sm pb-2 pb-md-0">
+    						<label for="inputPassword">密码</label> <input type="password" class="form-control" name="inputPassword" id="inputPassword" pattern="(?=^.{8,20}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" placeholder="必须" required=""><small id="passwordHelp" class="form-text text-muted">
+    							<ul class="pl-4">
+    								<li>接受字母数字字符。</li>
+    								<li>长度由8至20。</li>
+    								<li>须包含大写字母、小写字母、数字及最少一个字符。</li>
+    							</ul>
+    						</small>
+    					</div>
+    					<div class="col-sm">
+    						<label for="inputPasswordConfirm">确认密码</label> <input type="password" class="form-control" name="inputPasswordConfirm" id="inputPasswordConfirm" placeholder="必须" required=""><small id="passwordConfirmHelp" class="form-text text-danger d-none">密码未能确认。</small>
+    					</div>
+    				</div>
+    				<div class="form-group form-row">
+    					<div class="form-check col-sm">
+    						<label for="inputLang" class="d-block"> 预设语言</label>
+    						<div class="btn-group btn-group-toggle" data-toggle="buttons">
+    							<label class="btn  btn-outline-primary "> <input class="form-check-input" type="radio" name="inputLang" id="inputLangEN" value="EN"> English
+    							</label> <label class="btn  btn-outline-primary active focus"> <input class="form-check-input" type="radio" name="inputLang" id="inputLangTC" value="TC" checked="checked"> 繁體中文
+    							</label> <label class="btn  btn-outline-primary "> <input class="form-check-input" type="radio" name="inputLang" id="inputLangSC" value="SC" lang="zh-CN"> 简体中文
+    							</label>
+    						</div>
+    					</div>
+    				</div>
+    				<hr>
+    				<div class="form-group form-row">
+    					<div class="form-check col-sm">
+    						<label for="inputFirstname">名字</label> <input type="text" class="form-control" name="inputFirstname" maxlength="30" aria-describedby="firstnameHelp" placeholder="必须" required=""><small id="firstnameHelp" class="form-text text-muted">
+    							<ul class="pl-4">
+    								<li>最长为30字元。</li>
+    							</ul>
+    						</small>
+    					</div>
+    					<div class="form-check col-sm">
+    						<label for="inputLastname">姓氏</label> <input type="text" class="form-control" name="inputLastname" maxlength="30" aria-describedby="lastnameHelp" placeholder="必须" required=""><small id="lastnameHelp" class="form-text text-muted">
+    							<ul class="pl-4">
+    								<li>最长为30字元。</li>
+    							</ul>
+    						</small>
+    					</div>
+    				</div>
+    				<hr>
+    				<div class="form-group form-row">
+    					<div class="form-check col-sm">
+    						<label for="inputAccType1" class="d-block"> 客户类别</label>
+    						<div class="btn-group btn-group-toggle" data-toggle="buttons">
+    							<label class="btn  btn-outline-primary active focus"> <input class="form-check-input" type="radio" name="inputAccType" id="inputAccTypeI" value="I" checked="checked">
+    								个人用户
+    							</label> <label class="btn  btn-outline-primary "> <input class="form-check-input" type="radio" name="inputAccType" id="inputAccTypeC" value="C">
+    								公司/团体
+    							</label>
+
+    						</div>
+    					</div>
+    				</div>
+    				<div class="form-group form-row reg-org" style="display:none">
+    					<div class="form-check col-sm">
+    						<label for="inputOrgname">公司/团体名称</label> <input type="text" class="form-control reg-org-input" name="inputOrgname" maxlength="30" aria-describedby="orgnameHelp" placeholder="必须" required="" disabled="disabled"><small id="orgnameHelp" class="form-text text-muted">
+    							<ul class="pl-4">
+    								<li>最长为30字元。</li>
+    							</ul>
+    						</small>
+    					</div>
+    					<div class="form-check col-sm">
+    						<label for="inputOrgPos">职位</label> <input type="text" class="form-control reg-org-input" name="inputOrgPos" maxlength="30" aria-describedby="orgposHelp" placeholder="" disabled="disabled"><small id="orgposHelp" class="form-text text-muted">
+    							<ul class="pl-4">
+    								<li>最长为30字元。</li>
+    							</ul>
+    						</small>
+    					</div>
+    				</div>
+
+    				<div class="form-group form-row reg-org" style="display:none">
+    					<div class="form-check col-sm">
+    						<label>公司/团体类别</label>
+                <select name="inputOrgType" class="form-control reg-org-input" disabled="disabled">
+    							<option disabled="disabled">请选择(必须)</option>
+                  <option value="C" selected="selected">商业</option>
+                  <option value="G">政府</option>
+                  <option value="O">其他</option>
+    						</select>
+    					</div>
+    					<div class="form-check col-sm">
+    						<label>业务性质</label>
+                <select name="inputBiznature" class="form-control reg-org-input" disabled="disabled">
+                  <option disabled="disabled">请选择(必须)</option>
+                  <option value="0210" selected="selected">政府/ 半政府</option>
+                  <option value="0220">非牟利/ 公共事业机构</option>
+                  <option value="0310">制造业</option>
+                  <option value="0323">印刷</option>
+                  <option value="0338">杂项贸易公司</option>
+                  <option value="0445">建造业/ 工程</option>
+                  <option value="0450">零售/ 批发</option>
+                  <option value="0454">互联网交易员</option>
+                  <option value="0461">印刷</option>
+                  <option value="0480">运输/ 船务</option>
+                  <option value="0499">电信</option>
+                  <option value="0511">出版业</option>
+                  <option value="0512">传媒/ 娱乐</option>
+                  <option value="0513">广播和电信</option>
+                  <option value="0520">银行/ 金融</option>
+                  <option value="0522">金融服务（银行与证券）</option>
+                  <option value="0524">保险</option>
+                  <option value="0530">地产</option>
+                  <option value="0531">房地产建筑和施工</option>
+                  <option value="0611">教育</option>
+                  <option value="0625">慈善机构</option>
+                  <option value="0626">医疗服务</option>
+                  <option value="0721">酒店和住宿</option>
+                  <option value="0722">餐饮服务，餐饮和餐厅</option>
+                  <option value="0723">饮食</option>
+                  <option value="0724">酒店/ 旅游</option>
+                  <option value="0814">私人家庭</option>
+                  <option value="0900">慈善组织 / 非政府组织和协会</option>
+                  <option value="0910">I/E 贸易（服装,玩具,电子产品,手表）</option>
+                  <option value="0911">专业服务（会计，法律，副总裁等）</option>
+                  <option value="0921">政府部门及相关组织和公用事业</option>
+                  <option value="0981">美容/ 健美</option>
+                  <option value="0982">贸易</option>
+                  <option value="0990">其他</option>
+                  <option value="0999">零售和消费者</option>
+                  <option value="5000">物流和整合商</option>
+                  <option value="5001">医院和医疗保健</option>
+                  <option value="5002">IT系统和技术</option>
+                  <option value="5004">制造业 / 工业</option>
+                  <option value="N/A">未分类</option>
+    						</select>
+    					</div>
+    				</div>
+            <div class="custom-control custom-checkbox mb-3">
+              <input type="checkbox" class="custom-control-input" id="iagreeCheck" name="iagreeCheck" required="">
+              <label class="custom-control-label" for="iagreeCheck">我已阅读并接受条款及细则（包括<a href="#" class="btn-link">私隐政策声明</a> 和<a href="#" class="btn-link">免责声明</a>所载的条文）。</label>
+              <div class="invalid-feedback">Example invalid feedback text</div>
+            </div>
+    				<div class="form-group form-row reg-org submit-btn-group">
+    					<div class=" col-12 col-md-6 col-lg-4">
+    						<button type="submit" class="btn  btn-primary btn-block">提交</button>
+    					</div>
+    				</div>
+            <div>
+              <input type="hidden" name="_csrf" value="79be73c2-4661-4d7e-b119-20ec22748142">
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <button class="btnB2top page-top" title="Go to top">
+	<i class="material-icons md-18 align-middle">keyboard_arrow_up</i>
+</button>
+<footer>
+  <div class="container">
+    
+    <div class="row copyright">
+      <span>© 2019 香港邮政
+        <a href="https://accountsdev.hongkongpost.hk/tc/imp_notices/index.html" target="_blank">重要告示</a>
+        <a href="https://accountsdev.hongkongpost.hk/tc/privacy/index.html" target="_blank">私隐政策</a>
+        <a href="https://accountsdev.hongkongpost.hk/tc/related_links/index.html" target="_blank">有关连结</a>
+        <a href="https://accountsdev.hongkongpost.hk/tc/faq_support/index.html" target="_blank">常见问题</a>
+        <a href="https://accountsdev.hongkongpost.hk/tc/contact_us/index.html" target="_blank">联络我们</a>
+      </span>
+      <a href="https://www.w3.org/TR/WCAG20/" target="_blank">
+        <img src="./img/footer/wcag2aa.gif" alt="符合万维网联盟有关无障碍网页设计指引中2A级别的要求 (此连结将会以新视窗开启)">
+      </a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+</body>
+</html>

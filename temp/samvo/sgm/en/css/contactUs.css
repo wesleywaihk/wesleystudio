@@ -1,0 +1,122 @@
+@charset "utf-8";
+/* CSS Document */
+#contactUs{
+	background-image:url(../../images/contactUs/bg.jpg);
+	background-position:0px 329px; /* javascript override*/
+	background-repeat:no-repeat;	
+	
+	width:100%;
+	position:relative;
+	top:0px;
+	left:0px;
+	overflow:hidden;
+}
+#contactUs #innerScroller{
+	position:absolute;
+	left:0px;
+	top:0px;
+}
+#contactUs #innerScroller .content{
+	width:640px;
+	top:0px;
+	z-index:10;
+	display:block;
+	float:left;
+	position:relative
+}
+#contactUs .menu > ul{
+	display:block;
+	width:100px;
+	height:100px;
+	position:absolute;
+	left:31px;
+	top:102px;
+	width:576px;
+	margin:0px;
+	padding:0px;
+}
+#contactUs .menu > ul li{
+	display:block;
+	list-style:none;
+	list-style-type:none;
+	
+	padding:0px;	
+	text-align:left;
+}
+#contactUs .menu > ul li#tit1{
+	background-color:rgba(0,0,0,0.3);
+	background-image:url(../../images/arrowR.png);
+	background-position:540px center;
+	background-repeat:no-repeat;
+	
+	border:#fff 1px solid;
+	padding:10px 22px;			
+	border-radius:8px;
+	-webbit-border-radius:8px;	
+	-moz-border-radius:8px;
+	-o-border-radius:8px;
+	margin:0px 0px 12px 0px;
+	cursor:pointer;
+
+	font-size:45pt;
+	line-height:100%;
+	margin-bottom:25px;
+	width:530px;
+	padding:30px 22px 15px 22px;
+}
+#contactUs .menu > ul li#text{
+	padding:10px 0px 0px 8px;
+	font-size:17pt;
+	line-height:160%;
+	color:#fff;
+}
+#contactUs  .menu > ul li#text p{
+	font-size:17pt;
+	line-height:160%;
+	padding:0px 0px 10px 5px;
+	margin:0px 10px 0px 0px;
+	color:#cbc9ca;
+}
+
+#contactUs .textScroll2 ul li{
+	list-style:none;
+	list-style-type:none;
+	background-image: url(../../images/arrowR2.png);
+	background-color:#fff;
+	background-position:555px center;
+	background-repeat:no-repeat;	
+	
+	
+	border:#000 1px solid;
+	
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	
+	color:#000;
+	width:565px;
+	float:left;
+	
+	cursor:pointer;
+	
+	margin:0px 0px 10px 0px;
+	padding:25px 15px 15px 10px;
+}
+
+#contactUs .textScroll2 ul li.mailBTN{
+	background-image: url(../../images/contactUs/mailIco.gif);
+	background-color:#fff;
+	background-position:538px center;
+	background-repeat:no-repeat;	
+}
+#contactUs .textScroll2 ul li.mailBTN, #contactUs .textScroll2 ul li#subBTN5{
+	font-size:20pt;
+	line-height:120%;
+}
+#contactUs .textScroll2 td{
+	min-width:120px
+}
+#contactUs .textScroll2 p{
+	font-size:20pt;
+	line-height:160%;	
+}

@@ -1,0 +1,62 @@
+<script>
+$('#whoWeAre').ready(function(){
+	whoWeAreSubpageNum=3;
+	$('#whoWeAre #innerScroller').width(pageW*whoWeAreSubpageNum);
+	if(checkHash=='#'+pages[currPage-1][2]){
+		$('#whoWeAre #innerScroller').css('left',0-(2*pageW));
+		upDownPosition(0-(2*pageW),0);
+	}
+	resize();
+	setTimeout( function(){			
+		for(a=0; a<=$('#whoWeAre #content1 li:last-child').index();a++){
+			$('#whoWeAre li#tit'+(a+1)).data('num',(a+1)).click(function(){																							
+				changeHash(pages[currPage-1][$(this).data('num')]);
+				upDownPosition(0-($(this).index()+1)*pageW,animTime*.66);
+				$('#whoWeAre #innerScroller').stop().animate({'left':0-($(this).index()+1)*pageW},animTime*.66);
+			});		
+		};
+		$('#whoWeAre .content h3').click(function(){
+			changeHash(pages[currPage-1][0]);			
+			$('#whoWeAre #innerScroller').stop().animate({'left':0},animTime*.66);
+			upDownPosition(0,animTime*.66);
+		});
+	}, 100);
+});
+</script>
+<div id='whoWeAre'>
+	<div id='innerScroller'>
+		<div id='content1' class='content menu'>	
+			<ul>
+				<li id='tit1'>who we are</li>
+				<li id='tit2'>social responsibility</li>
+			</ul>
+		</div>
+		<div id='content2' class='content'>	
+			<h3>who we are</h3>
+			<div class='textScroll'>
+				<div class='textScroll2'>
+					<p>samvo is a diversified, global business. we focus on the areas of leisure and entertainment. while our headquarters are in europe, we have key offices and clients in most major cities across the globe. but it's not solely for this reason that we consider ourselves a world citizen.</p>						
+					<p>in keeping with our spirit of seeking world-class talents, our employees are drawn from all over the world. we think this helps our understanding of how our business can work in different parts of the globe. speaking of which, we have discovered one common trend across all markets. the world has embraced innovative thinking. today it is not just desired, it is required. in every business, in every corner of the world.</p>
+					<p>we ourselves realise how powerful this kind of thinking can be. we apply it in every aspect and area of our business. whether we are setting up a casino in the czech republic, building a boutique hotel in peru, or funding a research project in china.</p>
+					<p>innovative thinking means we can look at any and every business from a completely fresh perspective. no baggage. no boundaries. it means we can ask ourselves at the outset, how can we make this business different? how can we make it better? how can we do something no one has done before? and that is really what we are all about. samvo believes in pushing the limits. because it is only when you think outside the box that you really soar.</p>
+				</div>	
+			</div>
+		</div>			
+		<div id='content3' class='content'>	
+			<h3>social responsibility</h3>			
+			<div class='textScroll'>
+				<div class='textScroll2'>
+					<p>our aim is to be socially responsible in every aspect of our business, no matter how big or small. this commitment is clearly stated in the samvo group responsibility policy and is endorsed by all our people. at samvo, we have identified four focus areas in which we can make a difference, both as a company and as individuals:</p>
+					<h4>environment</h4>
+					<p>we believe the fate of our planet is in our hands. that's why we are constantly looking for ways to reduce our impact on the environment. to this end, we have developed environmental strategies for operations that include transitioning to a paperless office, creating an electronic database archive, using recyclable products and cradle-to-cradle furniture. on the rare occasion that we do use paper, we make sure it is recycled and from a responsible source.</p>
+					<h4>responsible gambling</h4>
+					<p>we ensure that every person who uses our website is over the age limit. our verification procedures are second to none in the industry. members who think they might be addicted to gambling are encouraged to call or visit one of the many help centres we feature on our website. we even provide them with the option of blocking themselves from our site if they wish to.</p>
+					<h4>community engagement</h4>
+					<p>there's nothing we like better than creating products that bring people together. that's why our goal is to always achieve long-term sustainable relationships with each of the communities in which we operate. to this end, we have implemented a community engagement policy. this policy recognises that different communities have different challenges and needs. it provides guidance to our various companies as to how to face these challenges and meet these needs so that we can create true benefits for the communities where we live and operate.</p> 
+					<h4>business ethics</h4>
+					<p>we believe there's only one way to do business and that's through fair and ethical practices. when any of our employees are faced with an ethical business dilemma we are quick to provide them with guidance. in all our global operations we act in a responsible, fair and transparent manner. we have a zero-tolerance policy towards bribery, facilitation payments, gifts, conflicts of interest, fraud, insider information and insider trading.</p>
+				</div>	
+			</div>					
+		</div>
+	</div>	
+</div>

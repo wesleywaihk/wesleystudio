@@ -1,0 +1,65 @@
+@charset "utf-8";
+#GB_Footer{
+  width:1000px;
+  position: relative;
+  clear: both;	
+}
+#GB_Footer_Link_Ctn{
+  border-top:#e6e6e6 1px solid; 
+  padding:8px 5px 8px 5px;
+  height:14px;
+}
+#GB_Footer_Link_Ctn ul li{
+  border-right:1px #e6e6e6 solid;
+}
+#GB_Footer_Link_Ctn ul li.footerLast{
+  border-right:hidden;
+}
+#FLeft{
+  float:left;
+  width:740px;
+  margin:0px;
+  padding:0px;
+  list-style:none outside;
+}
+#FRight{
+  float:right;
+  margin:0px;
+  padding:0px;
+  list-style:none outside;
+}
+.footerTXT{	
+  float:left;	  	
+  color:#999;
+  font-size:10px;	
+  padding:2px 8px 2px 8px;	
+}
+#GB_Footer_Logo_Ctn{
+  border-top:#e6e6e6 1px solid; 
+  padding:20px 5px 20px 5px;
+  height:14px;
+}
+#GB_Footer_Logo_Ctn div{
+  width:732px;
+  margin-left:auto;
+  margin-right:auto;
+}
+#GB_Footer_Logo_Ctn div ul li{
+  border-right:1px #e6e6e6 solid;
+}
+#GB_Footer_Logo_Ctn div ul li.footerLast{
+  border-right:hidden;
+}
+#smallLogo{
+  width:32px;
+  height:16px;
+  float:left;
+}
+#GB_Footer_Logo_Ctn ul{	
+  margin:0px;
+  padding:0px;
+  list-style:none outside;
+  width:700px;
+  float:left;
+  padding-top:3px;
+}

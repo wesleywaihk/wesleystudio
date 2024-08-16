@@ -1,0 +1,35 @@
+
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^wesley.com.hk$
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/(?:\ Ballot169)?
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^(.*)$ "https\:\/\/www\.wesley\.com\.hk\/$1" [R=301,L]
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTP_HOST} ^funevent\.net$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.funevent\.net$
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/(?:\ Ballot169)?
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^(.*)$ "https\:\/\/www\.elainefloral\.com\/$1" [R=301,L]
+RewriteCond %{HTTP_HOST} ^elainefloral.com$
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/(?:\ Ballot169)?
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^(.*)$ "https\:\/\/www\.elainefloral\.com\/$1" [R=301,L]
+RewriteCond %{HTTP_HOST} ^wesley\.com\.hk$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.wesley\.com\.hk$
+RewriteRule ^designer\/HPgame\/$ "http\:\/\/wesley\.com\.hk\/developer\/HPgame\/" [R=301,L]
+RewriteCond %{HTTP_HOST} ^wesley\.com\.hk$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.wesley\.com\.hk$
+RewriteRule ^designer\/GB\/$ "http\:\/\/wesley\.com\.hk\/developer\/GB\/" [R=301,L]
+RewriteCond %{HTTP_HOST} ^wesley\.com\.hk$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.wesley\.com\.hk$
+RewriteRule ^designer\/mybee\/$ "https\:\/\/www\.wesley\.com\.hk\/developer\/mybee\/" [R=301,L]
+
+
+
+
+
