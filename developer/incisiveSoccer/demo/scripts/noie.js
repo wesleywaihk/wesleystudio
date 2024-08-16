@@ -1,0 +1,1 @@
+if($.browser.msie&&$.browser.version<=8){$(document).ready(function(){$("#loadingLightBox").remove();$("#infoBox").remove();$("#masterContainer").remove();$("#mobileMenu").remove();$("body").append("<div id='no_ie'><img src='images/no_ie.jpg' /></div>")})}

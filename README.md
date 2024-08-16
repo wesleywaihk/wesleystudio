@@ -1,1 +1,1 @@
-# wesleystudio.github.io
+# Wesley Studio legacy website
