@@ -7,11 +7,15 @@
     <style>
         body, html {
             margin: 0;
-            padding: 0;
+            padding: 16px;
             width: 100%;
             height: 100%;
             overflow: hidden;
         }
+        .container {
+            width 100%;
+            max-width: 600px;
+            margin: auto;
        h1 {
             color: #285680;
             display: block;
@@ -64,22 +68,24 @@
     </style>
 </head>
 <body>
-    <h1>Mybee Technology Company Website</h1>
-    <div class="slideshow-container">
-        <div class="slides">
-            <div class="slide"><img src="./images/body1.jpg" alt="Image 1"></div>
-            <div class="slide"><img src="./images/body2.jpg"" alt="Image 2"></div>
-            <div class="slide"><img src="./images/body3.jpg"" alt="Image 3"></div>
-           <div class="slide"><img src="./images/body4.jpg" alt="Image 4"></div>
-            <div class="slide"><img src="./images/body5.jpg"" alt="Image 5"></div>
-            <div class="slide"><img src="./images/body6.jpg"" alt="Image 6"></div>
-           <div class="slide"><img src="./images/body7.jpg" alt="Image 7"></div>
-            <div class="slide"><img src="./images/body8.jpg"" alt="Image 8"></div>
-            <div class="slide"><img src="./images/body9.jpg"" alt="Image 9"></div>
-           <div class="slide"><img src="./images/body10.jpg" alt="Image 10"></div>
+    <div class=""container">
+        <h1>Mybee Technology Company Website</h1>
+        <div class="slideshow-container">
+            <div class="slides">
+                <div class="slide"><img src="./images/body1.jpg" alt="Image 1"></div>
+                <div class="slide"><img src="./images/body2.jpg"" alt="Image 2"></div>
+                <div class="slide"><img src="./images/body3.jpg"" alt="Image 3"></div>
+               <div class="slide"><img src="./images/body4.jpg" alt="Image 4"></div>
+                <div class="slide"><img src="./images/body5.jpg"" alt="Image 5"></div>
+                <div class="slide"><img src="./images/body6.jpg"" alt="Image 6"></div>
+               <div class="slide"><img src="./images/body7.jpg" alt="Image 7"></div>
+                <div class="slide"><img src="./images/body8.jpg"" alt="Image 8"></div>
+                <div class="slide"><img src="./images/body9.jpg"" alt="Image 9"></div>
+               <div class="slide"><img src="./images/body10.jpg" alt="Image 10"></div>
+            </div>
+            <a class="prev" onclick="changeSlide(-1)">❮</a>
+            <a class="next" onclick="changeSlide(1)">❯</a>
         </div>
-        <a class="prev" onclick="changeSlide(-1)">❮</a>
-        <a class="next" onclick="changeSlide(1)">❯</a>
     </div>
 
     <script>
