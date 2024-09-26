@@ -81,18 +81,30 @@
           <div class="slide">
             <img src="./images/body1.jpg" alt="Image 1" />
           </div>
-          <div class="slide"><img src="./images/body2.jpg"" alt="Image 2"></div>
-          <div class="slide"><img src="./images/body3.jpg"" alt="Image 3"></div>
+          <div class="slide">
+            <img src="./images/body2.jpg" alt="Image 2" />
+          </div>
+          <div class="slide">
+            <img src="./images/body3.jpg" alt="Image 3" />
+          </div>
           <div class="slide">
             <img src="./images/body4.jpg" alt="Image 4" />
           </div>
-          <div class="slide"><img src="./images/body5.jpg"" alt="Image 5"></div>
-          <div class="slide"><img src="./images/body6.jpg"" alt="Image 6"></div>
+          <div class="slide">
+            <img src="./images/body5.jpg" alt="Image 5" />
+          </div>
+          <div class="slide">
+            <img src="./images/body6.jpg" alt="Image 6" />
+          </div>
           <div class="slide">
             <img src="./images/body7.jpg" alt="Image 7" />
           </div>
-          <div class="slide"><img src="./images/body8.jpg"" alt="Image 8"></div>
-          <div class="slide"><img src="./images/body9.jpg"" alt="Image 9"></div>
+          <div class="slide">
+            <img src="./images/body8.jpg" alt="Image 8" />
+          </div>
+          <div class="slide">
+            <img src="./images/body9.jpg" alt="Image 9" />
+          </div>
           <div class="slide">
             <img src="./images/body10.jpg" alt="Image 10" />
           </div>
@@ -106,16 +118,42 @@
       let slideIndex = 0
       const slides = document.querySelector(".slides")
       const totalSlides = document.querySelectorAll(".slide").length
+      let slideInterval = setInterval(() => {
+        changeSlide(1)
+      }, 5000)
 
       function changeSlide(n) {
         slideIndex = (slideIndex + n + totalSlides) % totalSlides
         slides.style.transform = `translateX(${-slideIndex * 100}%)`
+        resetInterval()
       }
 
-      // Auto slide every 3 seconds
-      setInterval(() => {
-        changeSlide(1)
-      }, 5000)
+      function resetInterval() {
+        clearInterval(slideInterval)
+        slideInterval = setInterval(() => {
+          changeSlide(1)
+        }, 5000)
+      }
+
+      // Touch events for mobile
+      let startX = 0
+      let endX = 0
+
+      slides.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX
+      })
+
+      slides.addEventListener("touchmove", (e) => {
+        endX = e.touches[0].clientX
+      })
+
+      slides.addEventListener("touchend", () => {
+        if (startX - endX > 50) {
+          changeSlide(1) // Swipe left
+        } else if (endX - startX > 50) {
+          changeSlide(-1) // Swipe right
+        }
+      })
     </script>
   </body>
 </html>
