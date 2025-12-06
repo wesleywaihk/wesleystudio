@@ -9,7 +9,7 @@ body {
 }
 section {
   width: 100vw;
-  height: calc(100vh - 30px);
+  /* height: calc(100vh - 30px); */
   display: flex;
   justify-content: center;
   flex-flow: column nowrap;
@@ -59,6 +59,54 @@ h2 {
   font-size: 1.5rem;
   text-align: center;
 }
+
+.desc {
+  display: block;
+  margin: 0 auto 15px;
+  width: calc(100% - 60px);
+  max-width: 500px;
+  color: #285680;
+  font-size: 14px;
+}
+
+.jpnews {
+  display: block;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 15px;
+  border: 1px solid #633563;
+  margin: 10px -15px 30px;
+  width: calc(100% - 60px);
+  max-width: 500px;
+}
+
+.jpnews p {
+  color: #633563;
+  margin: 0 0 10px;
+}
+
+.jpnews p.small {
+  font-size: 14px;
+  color: #633563;
+}
+
+.jpnews a {
+  display: inline-flex;
+  border-radius: 15px;
+  border: 1px solid #633563;
+  color: #fff;
+  background-color: #633563;
+
+  overflow: hidden;
+  padding: 10px 15px;
+  gap: 10px;
+  align-items: center;
+  margin: 15px auto 15px;
+  cursor: pointer;
+  /* text-decoration: none; */
+}
+
 .links {
   margin: 0 0 1rem;
   display: flex;
