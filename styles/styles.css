@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   font-size: 16px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 section {
   width: 100vw;
@@ -15,7 +15,7 @@ section {
   flex-flow: column nowrap;
   align-content: center;
   align-items: center;
-  padding: 15px;
+  padding: 15px 15px 0;
   box-sizing: border-box;
 }
 h1 {
@@ -108,7 +108,7 @@ h2 {
 }
 
 .links {
-  margin: 0 0 1rem;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -163,6 +163,7 @@ footer {
   align-items: center;
   align-content: center;
   justify-content: center;
+  padding-bottom: 5px;
 }
 
 @media only screen and (max-width: 768px) {
