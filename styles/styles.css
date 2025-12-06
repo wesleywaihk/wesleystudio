@@ -64,9 +64,10 @@ h2 {
   display: block;
   margin: 0 auto 15px;
   width: calc(100% - 60px);
-  max-width: 500px;
+  max-width: 530px;
   color: #285680;
   font-size: 14px;
+  text-align: center;
 }
 
 .jpnews {
