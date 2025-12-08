@@ -9,7 +9,7 @@ body {
 }
 section {
   width: 100vw;
-  /* height: calc(100vh - 30px); */
+  height: calc(100vh - 30px);
   display: flex;
   justify-content: center;
   flex-flow: column nowrap;
@@ -77,14 +77,14 @@ h2 {
   overflow: hidden;
   padding: 15px;
   border: 1px solid #633563;
-  margin: 10px -15px 30px;
+  margin: 10px -15px 0;
   width: calc(100% - 60px);
   max-width: 500px;
 }
 
 .jpnews p {
   color: #633563;
-  margin: 0 0 10px;
+  margin: 0 0 15px;
 }
 
 .jpnews p.small {
@@ -103,12 +103,31 @@ h2 {
   padding: 10px 15px;
   gap: 10px;
   align-items: center;
-  margin: 15px auto 15px;
+  margin: 0 auto 1rem;
   cursor: pointer;
   /* text-decoration: none; */
 }
 
 .links {
+  margin: 0 0 1.5rem;
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-flow: row nowrap;
+  gap: 2rem; */
+}
+.links a {
+  color: #285680;
+  text-decoration: none;
+  font-size: 1.1rem;
+  margin-bottom: 1.1rem;
+}
+.links a:hover {
+  text-decoration: underline;
+}
+
+.contact-links {
   margin: 0;
   display: flex;
   justify-content: center;
@@ -116,7 +135,13 @@ h2 {
   align-content: center;
   flex-flow: column nowrap;
 }
-.links p {
+
+.contact-links h3 {
+  color: #285680;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.contact-links p {
   color: #285680;
   font-size: 1rem;
   display: flex;
@@ -124,17 +149,18 @@ h2 {
   margin: 0 0 0.8rem;
   text-align: center;
 }
-.links i {
+.contact-links i {
   font-size: 1.3rem;
   transform: translateY(1px);
 }
-.links a {
+.contact-links a {
   color: #285680;
   text-decoration: none;
 }
-.links a:hover {
+.contact-links a:hover {
   text-decoration: underline;
 }
+
 .small-links {
   color: #633563;
 }
@@ -160,11 +186,11 @@ footer {
   text-align: center;
   font-size: 0.8rem;
   height: 30px;
-  /* display: flex;
+  display: flex;
   align-items: center;
   align-content: center;
-  justify-content: center; */
-  padding: 20px 15px 5px;
+  justify-content: center;
+  /* padding: 20px 15px 5px; */
 }
 
 @media only screen and (max-width: 768px) {
