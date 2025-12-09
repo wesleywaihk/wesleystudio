@@ -8,7 +8,7 @@ body {
   overflow-x: hidden;
 }
 section {
-  width: 100vw;
+  width: 100%;
   min-height: calc(100vh - 30px);
   display: flex;
   justify-content: center;
@@ -207,6 +207,7 @@ footer {
     text-align: center;
   }
 }
+
 
 
 
