@@ -17,6 +17,7 @@ section {
   align-items: center;
   padding: 15px;
   box-sizing: border-box;
+  height: auto;
 }
 h1 {
   font-size: 0;
@@ -189,8 +190,8 @@ footer {
   /* display: flex;
   align-items: center;
   align-content: center;
-  justify-content: center;
-  padding: 20px 15px 5px; */
+  justify-content: center; */
+  padding: 5px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -206,5 +207,6 @@ footer {
     text-align: center;
   }
 }
+
 
 
