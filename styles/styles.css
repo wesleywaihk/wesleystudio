@@ -9,7 +9,7 @@ body {
 }
 section {
   width: 100vw;
-  height: calc(100vh - 30px);
+  min-height: calc(100vh - 30px);
   display: flex;
   justify-content: center;
   flex-flow: column nowrap;
@@ -206,3 +206,4 @@ footer {
     text-align: center;
   }
 }
+
