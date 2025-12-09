@@ -15,7 +15,7 @@ section {
   flex-flow: column nowrap;
   align-content: center;
   align-items: center;
-  padding: 15px 15px 0;
+  padding: 15px;
   box-sizing: border-box;
 }
 h1 {
@@ -185,12 +185,12 @@ h2 {
 footer {
   text-align: center;
   font-size: 0.8rem;
-  height: 30px;
-  display: flex;
+  min-height: 30px;
+  /* display: flex;
   align-items: center;
   align-content: center;
   justify-content: center;
-  /* padding: 20px 15px 5px; */
+  padding: 20px 15px 5px; */
 }
 
 @media only screen and (max-width: 768px) {
@@ -206,4 +206,5 @@ footer {
     text-align: center;
   }
 }
+
 
